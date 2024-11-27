@@ -12,7 +12,7 @@
 %\usepackage[noto-otc, unicode]{pxchfon}
 \usepackage{subfiles}
 \usepackage[backend=bibtex,style=phys,articletitle=true,biblabel=brackets,chaptertitle=false,pageranges=false]{biblatex}
-\addbibresource{./bib/liter.bib}
+\addbibresource{/Users/ikedahajime/GitHub/reserch/master_report/bib/liter.bib}
 
 \begin{document}
 
@@ -47,7 +47,7 @@
 
 % 本文
 \mainmatter
-%\include{chapter/sample} % 使い方を示す例
+\subfile{chapter/sample} % 使い方を示す例
 \subfile{chapter/introduction}
 \subfile{chapter/background}
 \subfile{chapter/proposed}
@@ -63,5 +63,8 @@
 \backmatter
 \appendix
 
-\printindex
+% \printindex
+% \bibliographystyle{plain} %参考文献出力スタイル
+% \bibliography{/Users/ikedahajime/GitHub/reserch/master_report/bib/liter.bib} %hoge.bibから拡張子を外した名前
+
 \end{document}

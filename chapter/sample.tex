@@ -1,13 +1,16 @@
-\documentclass[../thesis]{subfiles}
+\documentclass[/Users/ikedahajime/GitHub/reserch/master_report/thesis]{subfiles}
 % このファイル内だけのコマンド
+% \ifSubfilesClassLoaded{
+% 	\addbibresource{/Users/ikedahajime/GitHub/reserch/master_report/bib/liter.bib}
+% }{}
 \begin{document}
 \chapter{How To Use \LaTeX}
 
 \section{Figure}
     \subsection{基本的な画像挿入方法}
-    写真はimg下に配置します.\\
+    写真はimg下に配置します.とのこと\\
     \begin{figure}[htbp]
-        \centering   
+        \centering
         \includegraphics[width=0.5\textwidth]{img/sample/sample_png.png}
         \label{fig:sample_png}
         \caption[sample image (png)]{sample image: when its extension is png.}
@@ -18,7 +21,7 @@
     下記のようにpdfのようなベクタ画像を用いると拡大しても荒くならない.
     ただし, 保存時にベクタ形式にする必要がある.
     \begin{figure}[htbp]
-        \centering   
+        \centering
         \includegraphics[width=0.5\textwidth]{img/sample/sample_pdf.pdf}
         \label{Fig:sample_pdf}
         \caption[sample image (pdf)]{sample image: when its extension is pdf.}
@@ -26,7 +29,7 @@
     出力の位置は[htbp]で指定するが, レイアウトによっては自動的に次のページに移動するなど, 指定した通りに配置できないときがある.\\
     この場合は[H]のように大文字で指定すると,
     \begin{figure}[H]
-        \centering   
+        \centering
         \includegraphics[width=0.5\textwidth]{img/sample/sample_pdf.pdf}
         \label{Fig:sample_pdf_here}
         \caption[sample image (pdf, here)]{sample image: when its extension is pdf and is enforced to be here.}
@@ -110,7 +113,7 @@
 		}
 		\label{fig:sample_four_images2}
 	\end{figure}
-    
+
 \section{Table}
 Tableは\tbref{tb:sample_table}のようにして挿入する.
 \begin{table}[H]
@@ -139,4 +142,8 @@ Tableは\tbref{tb:sample_table}のようにして挿入する.
     y &= x^2 + 1 \label{eq:sample2}\\
       &= 5 \label{eq:sample3}
 \end{align}
+\ifSubfilesClassLoaded{
+	% \addbibresource{/Users/ikedahajime/GitHub/reserch/master_report/bib/liter.bib}
+	\include{chapter/bibliography}
+}{}
 \end{document}
