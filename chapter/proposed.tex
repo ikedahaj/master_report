@@ -1,5 +1,35 @@
-\documentclass[../thesis]{subfiles}
+\documentclass[/Users/ikedahajime/GitHub/reserch/master_report/thesis]{subfiles}
 % このファイル内だけのコマンド
 \begin{document}
 \chapter{手法と数値計算設定}
+この章ではシミュレーションの設定と、計測したパラメータについて記す。
+\section{数値シミュレーションの設定}
+モデルには Active Brownian Particles (ABP)\cite{filyAthermalPhaseSeparation2012} を用いた。 ABP モデルは以下のように表される。
+% ABPの方程式
+\begin{eqnarray}
+    \dot{\bm{r}}(t) &=& \zeta \bm{F}(t)+v_0 \bm{e}(\phi (t))
+\end{eqnarray}
+\begin{eqnarray}
+    \dot{\phi }(t) &=& \sqrt{2/\tau}\eta (t)
+\end{eqnarray}
+ここで、\mbox{\boldmath$r$}は粒子の位置、$v_0$ は自己推進の速度、$\mu$ は揺動度、$\eta$ はホワイトノイズ、
+\mbox{\boldmath$F$}は相互作用を表す。$\mbox{\boldmath$e$}(\theta)=(\cos\theta,\sin \theta)$は自己推進の方向を表す単位ベクトルで、
+$\tau$は緩和時間である。このモデルは、各粒子が角度$\theta$の方向に、持続時間$\tau$の間、速度$v_0$で進むことを表す。
+
+% CABPの方程式
+\begin{eqnarray}
+    \dot{\bm{r}}(t) &=& \zeta \bm{F}(t)+v_0 \bm{e}(\phi (t))
+\end{eqnarray}
+\begin{eqnarray}
+    \dot{\phi }(t) &=& \Omega + \sqrt{2/\tau}\eta (t)
+\end{eqnarray}
+ここで、\mbox{\boldmath$r$}は粒子の位置、$v_0$ は自己推進の速度、$\mu$ は揺動度、$\eta$ はホワイトノイズ、
+\mbox{\boldmath$F$}は相互作用を表す。$\mbox{\boldmath$e$}(\theta)=(\cos\theta,\sin \theta)$は自己推進の方向を表す単位ベクトルで、
+$\Omega$はキラリティーの強度、$\tau$は緩和時間である。最も簡単な場合として揺らぎがゼロ、つまり緩和時間$\tau=\infty$の極限を解析した。
+密度は$\varphi=1.209$の高密度領域を選んだ。この系を特徴づける長さは、系の半径である$R$と、粒子の回転半径$R_{\Omega}=v_0/\Omega$である。我々は、$R$と$R_{\Omega}$を系の相関長に対して系統的に変えて、系のダイナミクスを分類した。その結果、$R_{\Omega}$が大きくなるに従って系は空間的に無秩序になるカオティック相、系が規則正しく振動する振動相、1つの渦となって回り続ける定流相が現れた。本講演では上記の分類の相図を示す他、揺らぎの効果についても議論したい。
+
+\ifSubfilesClassLoaded{
+    \printbibliography[title=参考文献]
+    % \include{/Users/ikedahajime/GitHub/reserch/master_report/chapter/bibliography.tex}
+    }{}
 \end{document}
