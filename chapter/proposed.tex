@@ -4,30 +4,64 @@
 \chapter{手法と数値計算設定}
 この章ではシミュレーションの設定と、計測したパラメータについて記す。
 \section{数値シミュレーションの設定}
-モデルには Active Brownian Particles (ABP)\cite{filyAthermalPhaseSeparation2012} を用いた。 ABP モデルは以下のように表される。
+% TODO：章の部分を外部参照にする;
+モデルには第１、２章では Active Brownian Particles(ABP)\cite{filyAthermalPhaseSeparation2012} を用いた。 ABP モデルは以下のように表される。
 % ABPの方程式
 \begin{eqnarray}
-    \dot{\bm{r}}(t) &=& \zeta \bm{F}(t)+v_0 \bm{e}(\phi (t))
+    \dot{\bm{r}_i}(t) &=& \zeta \bm{F}_i(t)+v_0 \bm{e}(\theta_i (t))
 \end{eqnarray}
 \begin{eqnarray}
-    \dot{\phi }(t) &=& \sqrt{2/\tau}\eta (t)
+    \dot{\theta_i }(t) &=& \sqrt{2/\tau}\eta_i(t)
 \end{eqnarray}
-ここで、\mbox{\boldmath$r$}は粒子の位置、$v_0$ は自己推進の速度、$\mu$ は揺動度、$\eta$ はホワイトノイズ、
-\mbox{\boldmath$F$}は相互作用を表す。$\mbox{\boldmath$e$}(\theta)=(\cos\theta,\sin \theta)$は自己推進の方向を表す単位ベクトルで、
-$\tau$は緩和時間である。このモデルは、各粒子が角度$\theta$の方向に、持続時間$\tau$の間、速度$v_0$で進むことを表す。
+ここで、\mbox{\boldmath$r$}は粒子の位置、$v_0$ は自己推進の速度、$\mu$ は揺動度を表す。
+$\bm{F}_i$は相互作用を表し、二体間相互作用ポテンシャル$U$を用いて$\bm{F}_i=\sum_{i\neq j} \nabla_i\bm{U}(r_{ij})$と書ける。$\eta_i$ はホワイトノイズで、$\langle \eta_i(t) \eta_j(t') \rangle=\delta_{ij}\delta(t-t')$の関係を満たす。
+ここで、$\langle \dots \rangle$ はアンサンブル平均である。
+$\mbox{\boldmath$e$}(\theta_i)=(\cos\theta_i,\sin \theta_i)$は自己推進の方向を表す単位ベクトルで、
+$\tau$は緩和時間である。このモデルは、各粒子が角度$\theta_i$の方向に、持続時間$\tau$の間、速度$v_0$で進むことを表す。\\
+ポテンシャルには、Weeks-Chandler-Andersen(WCA)ポテンシャル\cite{weeksRoleRepulsiveForces1971}を用いた。
+\begin{equation}
+    U(r_{ij})=
+    \begin{cases}
+        4\epsilon\left(\left(\frac{\sigma}{r_{ij}}\right)^{12}-\left(\frac{\sigma}{r_{ij}}\right)^6+\frac{1}{4}\right) & (r_{ij}<2^{\frac{1}{6}}\sigma)\\
+        0 &(r_{ij}>2^{\frac{1}{6}}\sigma)
+    \end{cases}
+\end{equation}
+ここで、$r_{ij}=\left|\bm{r}_i-\bm{r}_j\right|$は粒子間距離、$\sigma$は粒径である。\\
+本研究では、時間の単位として
 
+第３章では、ABPにキラリティーに関する項を加えた、 Chiral Active Brownian Particles(CABP)\cite{teeffelenDynamicsBrownianCircle2008}TODO::aliment forceがないものに変える を用いた。このモデルは以下のように表される。
 % CABPの方程式
 \begin{eqnarray}
-    \dot{\bm{r}}(t) &=& \zeta \bm{F}(t)+v_0 \bm{e}(\phi (t))
+    \dot{\bm{r}_i}(t) &=& \zeta \bm{F}_i(t)+v_0 \bm{e}(\theta_i (t))
 \end{eqnarray}
 \begin{eqnarray}
-    \dot{\phi }(t) &=& \Omega + \sqrt{2/\tau}\eta (t)
+    \dot{\theta_i }(t) &=& \Omega+\sqrt{2/\tau}\eta_i(t)
 \end{eqnarray}
-ここで、\mbox{\boldmath$r$}は粒子の位置、$v_0$ は自己推進の速度、$\mu$ は揺動度、$\eta$ はホワイトノイズ、
-\mbox{\boldmath$F$}は相互作用を表す。$\mbox{\boldmath$e$}(\theta)=(\cos\theta,\sin \theta)$は自己推進の方向を表す単位ベクトルで、
-$\Omega$はキラリティーの強度、$\tau$は緩和時間である。最も簡単な場合として揺らぎがゼロ、つまり緩和時間$\tau=\infty$の極限を解析した。
-密度は$\varphi=1.209$の高密度領域を選んだ。この系を特徴づける長さは、系の半径である$R$と、粒子の回転半径$R_{\Omega}=v_0/\Omega$である。我々は、$R$と$R_{\Omega}$を系の相関長に対して系統的に変えて、系のダイナミクスを分類した。その結果、$R_{\Omega}$が大きくなるに従って系は空間的に無秩序になるカオティック相、系が規則正しく振動する振動相、1つの渦となって回り続ける定流相が現れた。本講演では上記の分類の相図を示す他、揺らぎの効果についても議論したい。
+$\Omega$はキラリティーの強度である。最も簡単な場合として揺らぎがゼロ、つまり緩和時間$\tau=\infty$の極限を解析した。
+ポテンシャルにはHarmonicポテンシャルを用いた。
+\begin{equation}
+    U(r_{ij})=
+    \begin{cases}
+        \frac{\epsilon}{2}\left(\frac{r_{ij}}{\sigma}-1\right)^2 &(r_{ij}<\sigma)\\
+        0 & (r_{ij}>\sigma)
 
+    \end{cases}
+\end{equation}
+
+\section{パラメータ}
+観測するパラメータとして、以下のパラメータを用いた。
+
+規格化された角運動量V:
+\begin{equation}
+    V=\frac{1}{V}\Sigma_i \frac{l_{zi}}{ |l_{zi}|}
+\end{equation}
+ここで、$l_{zi}$は$i$番目の粒子の角運動量で、$l_{zi}=x_i*v_{yi}-y_i*v_{xi}$。
+
+方位角成分の運動量は以下のように定義される。
+\begin{eqnarray}
+    m_n &=& \int_0^Rdr r\lvert\frac{1}{2\pi}\int_0^{2\pi}d\theta v(r,\theta)\rvert^2
+\end{eqnarray}
+離散化して、
 \ifSubfilesClassLoaded{
     \printbibliography[title=参考文献]
     % \include{/Users/ikedahajime/GitHub/reserch/master_report/chapter/bibliography.tex}
