@@ -27,8 +27,8 @@ $\tau$は緩和時間である。このモデルは、各粒子が角度$\theta_
     \end{cases}
 \end{equation}
 ここで、$r_{ij}=\left|\bm{r}_i-\bm{r}_j\right|$は粒子間距離、$\sigma$は粒径である。\\
-本研究では、時間の単位として
-
+数値計算のため、
+%TODO: 章を外部参照にする;
 第３章では、ABPにキラリティーに関する項を加えた、 Chiral Active Brownian Particles(CABP)\cite{teeffelenDynamicsBrownianCircle2008}TODO::aliment forceがないものに変える を用いた。このモデルは以下のように表される。
 % CABPの方程式
 \begin{eqnarray}
@@ -50,16 +50,29 @@ $\Omega$はキラリティーの強度である。最も簡単な場合として
 
 \section{パラメータ}
 観測するパラメータとして、以下のパラメータを用いた。
-
-規格化された角運動量V:
+\subsection{規格化された角運動量}
+規格化された角運動量V\cite{jiangEmergenceCollectiveDynamical2017}は以下のように定義される。
 \begin{equation}
-    V=\frac{1}{V}\Sigma_i \frac{l_{zi}}{ |l_{zi}|}
+    V=\frac{1}{V}\Sigma_i \frac{L_{zi}}{ |L_{zi}|}
 \end{equation}
-ここで、$l_{zi}$は$i$番目の粒子の角運動量で、$l_{zi}=x_i*v_{yi}-y_i*v_{xi}$。
+ここで、$L_{zi}$は$i$番目の粒子の角運動量で、$L_{zi}=x_i*v_{yi}-y_i*v_{xi}$。
+
+\subsection{渦度}
+渦度場は、速度場$\bm{v}(\bm{r})$を用いて$\omega(\bm{r})=\partial_x v_y -\partial_y v_x$と表される。
+数値計算上、速度場は以下のように計算する。空間を$\delta x=\delta y=0.25 \sigma$の格子状に分割する。
+このとき、格子点$\bm{r}(i,j)$における速度場は%この書き方でいいのか？
+\begin{equation}
+    \bm{v}(\bm{r}(i,j))=\sum_{\left|\bm{r}_k-\bm{r}(i,j)\right|<3\sigma} f(\left|\bm{r}_k-\bm{r}(i,j)\right|)\bm{v}_k
+\end{equation}
+のように計算する。ここで、$f(r)=(2\pi s^2)^{-1}. \exp(-r^2/2s^2)$はガウシアン関数であり、分散$s$は$3/\sqrt{2\log 10}$とした。\\
+この速度場を用いて、渦度場は格子点の周りの速度場を線積分することで計算される。
+\begin{equation}
+    \omega (\bm{r}(i,j))=
+\end{equation}
 
 方位角成分の運動量は以下のように定義される。
 \begin{eqnarray}
-    m_n &=& \int_0^Rdr r\lvert\frac{1}{2\pi}\int_0^{2\pi}d\theta v(r,\theta)\rvert^2
+    m_n &=& \int_0^Rdr r\left|\frac{1}{2\pi}\int_0^{2\pi}d\theta v(r,\theta)\right|^2
 \end{eqnarray}
 離散化して、
 \ifSubfilesClassLoaded{
