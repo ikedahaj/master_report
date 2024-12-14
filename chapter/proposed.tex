@@ -60,14 +60,14 @@ $\Omega$はキラリティーの強度である。最も簡単な場合として
 \subsection{渦度}
 渦度場は、速度場$\bm{v}(\bm{r})$を用いて$\omega(\bm{r})=\partial_x v_y -\partial_y v_x$と表される。
 数値計算上、速度場は以下のように計算する。空間を$\delta x=\delta y=0.25 \sigma$の格子状に分割する。
-このとき、格子点$\bm{r}(i,j)$における速度場は%この書き方でいいのか？
+このとき、格子点$r(i,j)$における速度場は%この書き方でいいのか？
 \begin{equation}
-    \bm{v}(\bm{r}(i,j))=\sum_{\left|\bm{r}_k-\bm{r}(i,j)\right|<3\sigma} f(\left|\bm{r}_k-\bm{r}(i,j)\right|)\bm{v}_k
+    \bm{v}(r(i,j))=\sum_{\left|\bm{r}_k-r(i,j)\right|<3\sigma} f(\left|\bm{r}_k-r(i,j)\right|)\bm{v}_k
 \end{equation}
 のように計算する。ここで、$f(r)=(2\pi s^2)^{-1}. \exp(-r^2/2s^2)$はガウシアン関数であり、分散$s$は$3/\sqrt{2\log 10}$とした。\\
 この速度場を用いて、渦度場は格子点の周りの速度場を線積分することで計算される。
 \begin{equation}
-    \omega (\bm{r}(i,j))=
+    \omega (\bm{r}(i,j))=\frac{v_x(r(i,j))\delta x +v_y(r(i+1,j)) \delta y -v_x(r(i+1,j+1))\delta x -v_y(r(i,j+1))} 
 \end{equation}
 
 方位角成分の運動量は以下のように定義される。
