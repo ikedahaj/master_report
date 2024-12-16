@@ -51,11 +51,12 @@ $\Omega$はキラリティーの強度である。最も簡単な場合として
 \section{パラメータ}
 観測するパラメータとして、以下のパラメータを用いた。
 \subsection{規格化された角運動量}
-規格化された角運動量V\cite{jiangEmergenceCollectiveDynamical2017}は以下のように定義される。
+規格化された角運動量V\cite{jiangEmergenceCollectiveDynamical2017}\cite{capriniCollectiveEffectsConfined2021}は以下のように定義される。
 \begin{equation}
     V=\frac{1}{V}\Sigma_i \frac{L_{zi}}{ |L_{zi}|}
 \end{equation}
-ここで、$L_{zi}$は$i$番目の粒子の角運動量で、$L_{zi}=x_i*v_{yi}-y_i*v_{xi}$。
+ここで、$L_{zi}$は$i$番目の粒子の角運動量で、$L_{zi}=x_i*v_{yi}-y_i*v_{xi}$。\\
+このパラメータは粒子の運動が
 
 \subsection{渦度}
 渦度場は、速度場$\bm{v}(\bm{r})$を用いて$\omega(\bm{r})=\partial_x v_y -\partial_y v_x$と表される。
@@ -67,8 +68,9 @@ $\Omega$はキラリティーの強度である。最も簡単な場合として
 のように計算する。ここで、$f(r)=(2\pi s^2)^{-1}. \exp(-r^2/2s^2)$はガウシアン関数であり、分散$s$は$3/\sqrt{2\log 10}$とした。\\
 この速度場を用いて、渦度場は格子点の周りの速度場を線積分することで計算される。
 \begin{equation}
-    \omega (\bm{r}(i,j))=\frac{v_x(r(i,j))\delta x +v_y(r(i+1,j)) \delta y -v_x(r(i+1,j+1))\delta x -v_y(r(i,j+1))} 
+    \omega (r(i,j))=\frac{v_x(r(i,j))\delta x +v_y(r(i+1,j)) \delta y -v_x(r(i+1,j+1))\delta x -v_y(r(i,j+1))}{\delta x \delta y}
 \end{equation}
+
 
 方位角成分の運動量は以下のように定義される。
 \begin{eqnarray}
