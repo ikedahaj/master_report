@@ -53,10 +53,15 @@ $\Omega$はキラリティーの強度である。最も簡単な場合として
 \subsection{規格化された角運動量}
 規格化された角運動量V\cite{jiangEmergenceCollectiveDynamical2017}\cite{capriniCollectiveEffectsConfined2021}は以下のように定義される。
 \begin{equation}
-    V=\frac{1}{V}\Sigma_i \frac{L_{zi}}{ |L_{zi}|}
+    V=\frac{1}{N}\Sigma_i \frac{L_{zi}}{ |L_{zi}|}
 \end{equation}
 ここで、$L_{zi}$は$i$番目の粒子の角運動量で、$L_{zi}=x_i*v_{yi}-y_i*v_{xi}$。\\
-このパラメータは粒子の運動が
+このパラメータは、角度方向の運動方向が揃っているか、及びその回転方向がどちらかを判定するパラメータである。
+まず絶対値に注目すると、絶対値が小さいとき、つまり$|V|\sim 0$のとき、時計回り、反時計回りに運動する粒子が同数存在し、
+系全体での渦が生じていないことが分かる。
+反対に絶対値が大きいとき、つまり$|V|\sim 1$のときは系全体が原点を中心とした一つの渦をなして一方向に回っていることが分かる。\\
+続いて、$|V|\sim 1$として、その正負について考える。すると、値が負、つまり$V\sim -1$のときは時計回りの渦が、
+値が正、つまり$V\sim 1$のときは反時計回りの渦が発生していることを読み取ることができる。
 
 \subsection{渦度}
 渦度場は、速度場$\bm{v}(\bm{r})$を用いて$\omega(\bm{r})=\partial_x v_y -\partial_y v_x$と表される。
