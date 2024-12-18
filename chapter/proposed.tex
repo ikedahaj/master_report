@@ -50,7 +50,7 @@ $\Omega$はキラリティーの強度である。最も簡単な場合として
 
 \section{パラメータ}
 観測するパラメータとして、以下のパラメータを用いた。
-\subsection{渦秩序変数}
+\subsection{渦秩序変数}\label{subsec:vortes_order_parameter}
 系が渦をなしているかどうかを定量化するために、
 渦秩序変数$\psi$\cite{wiolandConfinementStabilizesBacterial2013}を以下のように定義する。
 \begin{equation}
@@ -61,7 +61,10 @@ $\Omega$はキラリティーの強度である。最も簡単な場合として
 
 
 \subsection{規格化された角運動量}
-規格化された角運動量V\cite{jiangEmergenceCollectiveDynamical2017}\cite{capriniCollectiveEffectsConfined2021}は以下のように定義される。
+%TODO:章を早退参照
+本研究では、第２、３章において高密度系でのシミュレーションを行う。この場合、粒子は動径方向の運動をほとんど行わず、角度方向の
+運動が支配的になる。そのため\ref{subsec:vortes_order_parameter}のような、動径方向の運動を考慮したオーダーパラメータを使う必要がない。
+そこで、規格化された角運動量V\cite{jiangEmergenceCollectiveDynamical2017}\cite{capriniCollectiveEffectsConfined2021}は以下のように定義される。
 \begin{equation}
     V=\frac{1}{N}\Sigma_i \frac{L_{zi}}{ |L_{zi}|}
 \end{equation}
