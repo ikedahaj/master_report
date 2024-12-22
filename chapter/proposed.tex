@@ -27,7 +27,7 @@ $\tau$は緩和時間である。このモデルは、各粒子が角度$\theta_
     \end{cases}
 \end{equation}
 ここで、$r_{ij}=\left|\bm{r}_i-\bm{r}_j\right|$は粒子間距離、$\sigma$は粒径である。\\
-数値計算のため、
+数値計算のため、長さの単位を$\sigma$、時間の単位を$\sigma/v_0$と置いて無次元化を行う。
 %TODO: 章を外部参照にする;
 第３章では、ABPにキラリティーに関する項を加えた、 Chiral Active Brownian Particles(CABP)\cite{teeffelenDynamicsBrownianCircle2008}TODO::aliment forceがないものに変える を用いた。このモデルは以下のように表される。
 % CABPの方程式
@@ -37,6 +37,7 @@ $\tau$は緩和時間である。このモデルは、各粒子が角度$\theta_
 \begin{eqnarray}
     \dot{\theta_i }(t) &=& \Omega+\sqrt{2/\tau}\eta_i(t)
 \end{eqnarray}
+%TODO:変える
 $\Omega$はキラリティーの強度である。最も簡単な場合として揺らぎがゼロ、つまり緩和時間$\tau=\infty$の極限を解析した。
 ポテンシャルにはHarmonicポテンシャルを用いた。
 \begin{equation}
@@ -76,12 +77,12 @@ $\Omega$はキラリティーの強度である。最も簡単な場合として
 続いて、$|V|\simeq 1$として、その正負について考える。すると、値が負、つまり$V\simeq -1$のときは時計回りの渦が、
 値が正、つまり$V\simeq 1$のときは反時計回りの渦が発生していることを読み取ることができる。
 
-\subsection{渦度}
+\subsection{渦度}\label{subsec:def_vortex}
 渦度場は、速度場$\bm{v}(\bm{r})$を用いて$\omega(\bm{r})=\partial_x v_y -\partial_y v_x$と表される。
 数値計算上、速度場は以下のように計算する。空間を$\delta x=\delta y=0.25 \sigma$の格子状に分割する。
 このとき、格子点$r(i,j)$における速度場は%この書き方でいいのか？
-\begin{equation}
-    \bm{v}(r(i,j))=\sum_{\left|\bm{r}_k-r(i,j)\right|<3\sigma} f(\left|\bm{r}_k-r(i,j)\right|)\bm{v}_k
+\begin{equation}\label{eq:valocity_field}
+    \bm{v}(r(i,j))=\sum_{\left|\bm{r}_k-r(i,j)\right|<3\sigma} f(\left|\bm{r}_k-r(i,j)\right|)\bm{v}_k 
 \end{equation}
 のように計算する。ここで、$f(r)=(2\pi s^2)^{-1}. \exp(-r^2/2s^2)$はガウシアン関数であり、分散$s$は$3/\sqrt{2\log 10}$とした。\\
 この速度場を用いて、渦度場は格子点の周りの速度場を線積分することで計算される。
@@ -94,10 +95,10 @@ $\Omega$はキラリティーの強度である。最も簡単な場合として
 %TODO:説明
 方位角成分の運動量は以下のように定義される。
 \begin{eqnarray}
-    m_n &=& \int_0^R dr r\left|\frac{1}{2\pi}\int_0^{2\pi}d\theta v(r,\theta)\right|^2
+    m_n &=& \int_0^R dr r\left|\frac{1}{2\pi}\int_0^{2\pi}d\theta \bm{v}(r,\theta)\right|^2
 \end{eqnarray}
-ここで、$equation$
-数値計算する際には、
+ここで、$\bm{v}(r,\theta)$は極座標系の速度場である。
+数値計算する際には、\ref{subsec:def_vortex}と同様に式\ref{eq:valocity_field}に基づいて求めた速度場を用いる。
 
 
 \ifSubfilesClassLoaded{
