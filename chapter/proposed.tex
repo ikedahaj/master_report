@@ -15,7 +15,7 @@
     \dot{\theta_i }(t) &=& \sqrt{2/\tau}\eta_i(t)
 \end{eqnarray}
 ここで、\mbox{\boldmath$r$}は粒子の位置、$v_0$ は自己推進の速度、$\zeta$ は摩擦係数を表す。
-$\bm{F}_i$は相互作用を表し、二体間相互作用ポテンシャル$U$を用いて$\bm{F}_i=\sum_{i\neq j} \nabla_i\bm{U}(r_{ij})$と書ける。
+$\bm{F}_i$は相互作用を表し、二体間相互作用ポテンシャル$U(r)$を用いて$\bm{F}_i=\sum_{i\neq j} \nabla_i\bm{U}(r_{ij})$と書ける。
 $\eta_i$ はホワイトノイズで、$\langle \eta_i(t) \eta_j(t') \rangle=\delta_{ij}\delta(t-t')$の関係を満たす。
 ここで、$\langle \dots \rangle$ はアンサンブル平均である。
 $\mbox{\boldmath$e$}(\theta_i)=(\cos\theta_i,\sin \theta_i)$は自己推進の方向を表す単位ベクトルで、
@@ -28,8 +28,8 @@ $\tau$は緩和時間である。このモデルは、各粒子が角度$\theta_
         0 &(r_{ij}>2^{\frac{1}{6}}\sigma)
     \end{cases}
 \end{equation}
-ここで、$r_{ij}=\left|\bm{r}_i-\bm{r}_j\right|$は粒子間距離、$\sigma$は粒径である。\\
-数値計算のため、長さの単位を$\sigma$、時間の単位を$\sigma/v_0$と置いて無次元化を行う。
+ここで、$r_{ij}=\left|\bm{r}_i-\bm{r}_j\right|$は粒子間距離、$\sigma$は粒径、$\epsilon$は相互作用の強度である。\\
+数値計算のため、長さの単位を$\sigma$、時間の単位を$\sigma/v_0$と置いた。コントロールパラメータは、無次元化した
 %TODO: 章を外部参照にする;
 第３章では、ABPにキラリティーに関する項を加えた、 Chiral Active Brownian Particles(CABP)\cite{teeffelenDynamicsBrownianCircle2008}TODO::aliment forceがないものに変える を用いた。このモデルは以下のように表される。
 % CABPの方程式
