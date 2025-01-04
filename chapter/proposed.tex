@@ -4,8 +4,9 @@
 \chapter{手法と数値計算設定}
 この章ではシミュレーションの設定と、計測したパラメータについて記す。
 \section{数値シミュレーションの設定}
-% TODO：章の部分を外部参照にする;\cite{filyAthermalPhaseSeparation2012} 
-モデルには第１、２章では inertial inertial Active Brownian Particles(iABP)を用いた。 iABP モデルは以下のように表される。
+% TODO：章の部分を外部参照にする;\cite{filyAthermalPhaseSeparation2012}
+モデルには第１、２章では inertial inertial Active Brownian Particles(iABP)を用いた。
+iABP モデルは以下のように表される。
 % ABPの方程式
 \begin{eqnarray}
     \dot{\bm{v}_i}(t)&=& - \zeta \bm{v}_i  +\bm{F}_i +\zeta v_0 \bm{e}(\theta_i(t))
@@ -15,7 +16,8 @@
     \dot{\theta_i }(t) &=& \sqrt{2/\tau}\eta_i(t)
 \end{eqnarray}
 ここで、\mbox{\boldmath$r$}は粒子の位置、$v_0$ は自己推進の速度、$\zeta$ は摩擦係数を表す。
-$\bm{F}_i$は相互作用を表し、二体間相互作用ポテンシャル$U(r)$を用いて$\bm{F}_i=\sum_{i\neq j} \nabla_i\bm{U}(r_{ij})$と書ける。
+$\bm{F}_i$は相互作用を表し、二体間相互作用ポテンシャル$U(r)$を用いて
+$\bm{F}_i=\sum_{i\neq j} \nabla_i\bm{U}(r_{ij})$と書ける。
 $\eta_i$ はホワイトノイズで、$\langle \eta_i(t) \eta_j(t') \rangle=\delta_{ij}\delta(t-t')$の関係を満たす。
 ここで、$\langle \dots \rangle$ はアンサンブル平均である。
 $\mbox{\boldmath$e$}(\theta_i)=(\cos\theta_i,\sin \theta_i)$は自己推進の方向を表す単位ベクトルで、
@@ -29,9 +31,14 @@ $\tau$は緩和時間である。このモデルは、各粒子が角度$\theta_
     \end{cases}
 \end{equation}
 ここで、$r_{ij}=\left|\bm{r}_i-\bm{r}_j\right|$は粒子間距離、$\sigma$は粒径、$\epsilon$は相互作用の強度である。\\
-数値計算のため、長さの単位を$\sigma$、時間の単位を$\sigma/v_0$と置いた。コントロールパラメータは、無次元化した
+数値計算のため、長さの単位を$\sigma$、時間の単位を$\sigma/v_0$と置いた。無次元化した質量$M=mv_0/\zeta\sigma$、
+ペクレ数$Pe=v_0\tau/\sigma$、エネルギーと速度の比$\epsilon^*=\epsilon/\sigma v_0 \zeta$
+をパラメータに取り、このうち$\epsilon^*=1$とした。
+粒子数$N$は、面積分率$\psi$と系の面積$S$を用いて$N=4\psi S/\pi\sigma^2$とした。
+% コントロールパラメータには、
 %TODO: 章を外部参照にする;
-第３章では、ABPにキラリティーに関する項を加えた、 Chiral Active Brownian Particles(CABP)\cite{teeffelenDynamicsBrownianCircle2008}TODO::aliment forceがないものに変える を用いた。このモデルは以下のように表される。
+第３章では、ABPにキラリティーに関する項を加えた、 Chiral Active Brownian Particles(CABP)\cite{teeffelenDynamicsBrownianCircle2008}TODO::aliment forceがないものに変える
+を用いた。このモデルは以下のように表される。
 % CABPの方程式
 \begin{eqnarray}
     \dot{\bm{r}_i}(t) &=& \frac{1}{\zeta} \bm{F}_i(t)+v_0 \bm{e}(\theta_i (t))
@@ -84,7 +91,7 @@ $\Omega$はキラリティーの強度である。最も簡単な場合として
 数値計算上、速度場は以下のように計算する。空間を$\delta x=\delta y=0.25 \sigma$の格子状に分割する。
 このとき、格子点$r(i,j)$における速度場は%この書き方でいいのか？
 \begin{equation}\label{eq:valocity_field}
-    \bm{v}(r(i,j))=\sum_{\left|\bm{r}_k-r(i,j)\right|<3\sigma} f(\left|\bm{r}_k-r(i,j)\right|)\bm{v}_k 
+    \bm{v}(r(i,j))=\sum_{\left|\bm{r}_k-r(i,j)\right|<3\sigma} f(\left|\bm{r}_k-r(i,j)\right|)\bm{v}_k
 \end{equation}
 のように計算する。ここで、$f(r)=(2\pi s^2)^{-1}. \exp(-r^2/2s^2)$はガウシアン関数であり、分散$s$は$3/\sqrt{2\log 10}$とした。\\
 この速度場を用いて、渦度場は格子点の周りの速度場を線積分することで計算される。
