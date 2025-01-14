@@ -7,6 +7,28 @@
 \section{研究背景}
 自らの力で進むものは世の中に多く存在する。魚や鳥、人などをはじめとした生物はその典型的な例である。
 %図を挿入;
+\begin{figure}[htbp]
+    \centering
+    \begin{tabular}{c}
+        \begin{minipage}{0.4\hsize}
+            \text{(a)}
+            \includegraphics[width=\textwidth]{img/intro/256px-School_of_sardines_at_the_Monterey_Bay_Aquarium_(12056).jpg}
+        \end{minipage}
+        \begin{minipage}{0.4\hsize}
+            \text{(b)}
+            \includegraphics[width=\textwidth]{img/intro/mukudori.png}
+        \end{minipage}\\
+        \begin{minipage}{0.4\hsize}
+            \text{(c)}
+            \includegraphics[width=\textwidth]{img/intro/thumbnail.png}
+        \end{minipage}
+    \end{tabular}
+    \caption[Four sample images]
+    {
+        hoge
+    }
+    \label{fig:example_actmat}
+\end{figure}
 これらの生物は、単独では一見無秩序な運動を行う。しかし多くの個体が集まって集団になると、イワシのトルネード、
 椋鳥の群れなどのように、群れ全体が秩序だった集団運動を行う。この集団運動は特定の個体がリーダーとなって
 指示を出すことで起こっているのではなく、各個体同士の相互作用の結果として発生している。
@@ -16,22 +38,36 @@
 
 アクティブマターの特徴の１つとして、自発的に渦を産むことがあげられる。
 この現象は個々の構成要素が自己駆動することによって起こる現象であり、
-このような系では速度相関が発達するが、その相関長はある特徴的な長さを持っており、
+このような系では速度相関が発達する。相関長はある特徴的な長さを持っており、
 この長さは渦の大きさに関係していることがわかっている。
 この現象は様々なアクティブマター系において観測されている。
 例えば枯草菌\cite{wensinkMesoscaleTurbulenceLiving2012}や羊の精子\cite{creppyTurbulenceSwarmingSperm2015}
 など多くの系で見ることができ、理論においてもToner-Tu-SwiftHohenberg (TTSH) 方程式など\cite{wensinkMesoscaleTurbulenceLiving2012}様々な系で見られる。%：toner-toとか
 % 円領域に行った方が自然？円形領域に閉じ込めるとまわる〜
+\begin{figure}[htbp]
+    \centering
+    \begin{tabular}{c}
+        \begin{minipage}{0.4\hsize}
+            \text{(a)}
+            \includegraphics[width=\textwidth]{img/intro/Flow_B.subtiles.pdf}
+        \end{minipage}
+    \end{tabular}
+    \caption[Four sample images]
+    {
+        hoge
+    }
+    \label{fig:intro_flow}
+\end{figure}
 \\
 これらアクティブマターについての理論研究はその多くが境界のないバルク系であるが、
 閉じ込め系に対する研究も行われている。閉じ込め系においてはその境界の形状などによって
-様々な現象が見られている。例えば粒子の凝集、整流効果\cite{ghoshSelfPropelledJanusParticles2013}
-捕集効果、エッジ流など、様々な現象が見られている。
+様々な現象が見られている。例えば粒子の凝集\cite{dasAggregateMorphologyActive2020}、整流効果\cite{ghoshSelfPropelledJanusParticles2013}
+捕集効果\cite{kaiserHowCaptureActive2012}、エッジ流\cite{soniOddFreeSurface2019}など、様々な現象が見られている。
 そのような現象の１つとして、アクティブマターを円形領域の中に入れると、その
 円の半径によって、円の中のアクティブマターに複数の渦ができたり全体で１つの渦になったりする。
 この現象によって円の中の流れが１つになるときは、円の半径と系が持つ相関長が等しくなるところ
 付近であることが知られている。
-これは、この障害物とアクティブマターとの相互作用によって相関長
+これは、この障害物とアクティブマターとの相互作用によって相関長%園内流れのず
 を取り出すことができると言える。この現象は実験、理論ともに研究が進んでいるが、
 理論系における研究は整列相互作用を持つモデルが主に使われている。整列相互作用のないモデルにおいては、
 バルク系における速度相関の発達については見られているものの、閉じ込め系に関する研究は少ない。\\
@@ -41,13 +77,13 @@ Active Brownian Particles モデル及び Chiral Active Brownian Particlesモデ
 流れや渦について解析を行なった。これらのモデルはシンプルなモデルであり、整列相互作用のような
 複雑な相互作用が明示的に入っておらず、自己駆動性による性質を明らかにするために優れたモデルである。\\
 ABP モデルの系においては、バルク系における速度相関の発達については見られており、
-閉じ込め系における相関長との関係も議論されている。しかしこの論文では粒子をリング状の
+閉じ込め系における相関長との関係も議論されている\cite{capriniCollectiveEffectsConfined2021}。しかしこの論文では粒子をリング状の
 壁に閉じ込めた一次元系であり、実験の系と比べると極端な状態であると言える。
-そこで本研究では、ABPを円形領域に閉じ込めることで、アクティブさ (ペクレ数) を変化させ、
+そこで本研究では、ABPを円形領域に閉じ込めることでアクティブさ (ペクレ数) を変化させ、
 系の流れについて調べた。\\
 さらに、相関長と閉じ込めによる効果の関係をより明らかにするため、CABP を用いた。
 CABPにおいてもバルク系における速度相関の発達については見られている。
-また、このモデルをでは粒子を１つの塊にしてその塊の挙動を見る研究は行われているが、
+また、このモデルをでは粒子を１つの塊にしてその塊の挙動を見る研究は行われている\cite{capriniSelfrevertingVorticesChiral2024}が、
 その相関長との関係については議論されていない。
 そこで、この系を円形領域に閉じ込め、粒子の回転半径 $R_\Omega$ を変化させて同様に流れや渦について調べた。
 
