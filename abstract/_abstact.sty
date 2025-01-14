@@ -10,16 +10,17 @@
 % \setlength{\textwidth}{176mm}
 % \setlength{\abovecaptionskip}{-4pt}
 % \setlength{\belowcaptionskip}{-10pt}
-\usepackage[top=2cm, bottom=2cm, left=1.5cm, right=1.5cm, columnsep=1cm]{geometry}
+\usepackage[top=2cm, bottom=2cm, left=2.5cm, right=2.5cm, columnsep=1cm]{geometry}
 %和文が14Qになるように欧文デフォルトのサイズを調整（上手くいく）
 % \fontsize{10truept}{14truept}\selectfont
-\renewcommand{\normalsize}{\@setfontsize\normalsize{14.1Q}{17.625H}}
+\renewcommand{\normalsize}{\@setfontsize\normalsize{15Q}{17.625H}}
 % 参考: フォントサイズ10pt(=14.1Q)
 % 卒論概要様式の行間固定値14pt
 \renewcommand{\refname}{\fontsize{16.92Q}{23H}\selectfont 参考文献}
 \def \figref  #1{\figurename\ref{#1}}
 \def \tabref  #1{\tablename\ref{#1}}
 \def \equref  #1{式(\ref{#1})}
+\renewcommand{\baselinestretch}{1.2}
 \renewcommand{\figurename}{Fig.}
 \renewcommand{\tablename}{Table}
 \renewcommand{\section}{\@startsection{section}{1}{\z@}%
