@@ -9,7 +9,7 @@
 \section{Figure}
     \subsection{基本的な画像挿入方法}
     写真はimg下に配置します.とのこと\\
-    \begin{figure}[htbp]
+    \begin{figure}
         \centering
         \includegraphics[width=0.5\textwidth]{img/sample/sample_png.png}
         \label{fig:sample_png}
@@ -20,7 +20,7 @@
     上記のように, pngやjpegのようなラスタ画像を用いると, 拡大したときに荒くなってしまう.\\
     下記のようにpdfのようなベクタ画像を用いると拡大しても荒くならない.
     ただし, 保存時にベクタ形式にする必要がある.
-    \begin{figure}[htbp]
+    \begin{figure}
         \centering
         \includegraphics[width=0.5\textwidth]{img/sample/sample_pdf.pdf}
         \label{Fig:sample_pdf}
@@ -80,23 +80,23 @@
 		\begin{tabular}{c}
 		% ----- image 1 =====
 			\begin{minipage}{0.25\hsize}
-				\centering
-				\includegraphics[width=\textwidth]{img/sample/sample1.pdf}
 				\text{(a)}
+				% \centering
+				\includegraphics[width=\textwidth]{img/sample/sample1.pdf}
 			\end{minipage}
 			\hspace{1cm}
 		% ----- image 2 =====
 			\begin{minipage}{0.25\hsize}
-				\centering
-				\includegraphics[width=\textwidth]{img/sample/sample2.pdf}
 				\text{(b)}
+				% \centering
+				\includegraphics[width=\textwidth]{img/sample/sample2.pdf}
 			\end{minipage}
 			\vspace{1cm}\\
 		% ----- image 3 =====
 			\begin{minipage}{0.25\hsize}
+				\text{(c)}
 				\centering
 				\includegraphics[width=\textwidth]{img/sample/sample3.pdf}
-				\text{(c)}
 			\end{minipage}
 			\hspace{1cm}
 		% ----- image 4 =====

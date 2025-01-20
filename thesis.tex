@@ -1,4 +1,4 @@
-\documentclass[a4paper,12pt]{jsbook}
+\documentclass[a4paper,11pt]{jsbook}
 \setlength{\textwidth}{\fullwidth}
 \setlength{\evensidemargin}{\oddsidemargin}
 \usepackage{thesis}
@@ -9,56 +9,51 @@
 \usepackage{physics}
 \usepackage{bm}
 \usepackage[dvipdfmx]{graphicx}
+\usepackage{otf}
 %\usepackage[noto-otc, unicode]{pxchfon}
 \usepackage{subfiles}
 \usepackage[backend=bibtex,style=phys,articletitle=true,biblabel=brackets,chaptertitle=false,pageranges=false]{biblatex}
-\addbibresource{/Users/ikedahajime/GitHub/reserch/master_report/bib/liter.bib}
+% \addbibresource{/Users/ikedahajime/GitHub/reserch/master_report/bib/liter.bib}
+\addbibresource{/Users/ikedahajime/GitHub/reserch/master_report/bib/master_thesis.bib}
+\addbibresource{/Users/ikedahajime/GitHub/reserch/master_report/bib/web.bib}
 
 \begin{document}
-
 % 表紙
 \thesis{修士論文}
-\date{20xx年xx月xx日}
+\date{}
 \title{
-    \scalebox{1.5}{The Title}\\
-    \vspace{1.2zh}
-    \scalebox{1.5}{of}\\
-    \vspace{1.2zh}
-    \scalebox{1.5}{Your Master Thesis}
+    \scalebox{1.}{円形領域に閉じ込められたアクティブマターの協同運動}\\
 }
-\teacher{Your Professor 教授}
-\organization{名古屋大学大学院 理学研究科 物質理学専攻(物理系)}
-\labname{your labname}
-\author{Your Name}
-\idnumber{Your ID}
+\teacher{}
+\organization{名古屋大学大学院 理学研究科 理学専攻}
+\labname{非平衡物理研究室}
+\author{池田創}
+\idnumber{262301021}
 
 \maketitle
-
+\newpage
 % 前書き
-\include{abstract}
+\subfile{chapter/abstract}
 \frontmatter
 \tableofcontents
-
 %画像の目次
-%\listoffigures
-
+% \listoffigures
 %図の目次
 %\listoftables
-
 % 本文
 \mainmatter
-\subfile{chapter/sample} % 使い方を示す例
+% \subfile{chapter/sample} % 使い方を示す例
 \subfile{chapter/introduction}
-\subfile{chapter/background}
+% \subfile{chapter/background}
 \subfile{chapter/proposed}
 \subfile{chapter/result}
-\subfile{chapter/result2}
+% \subfile{chapter/result2}
+\subfile{chapter/result3}
 \subfile{chapter/conclusion}
 \subfile{chapter/acknowledgement}
-\subfile{chapter/bibliography}
 \subfile{chapter/appendix1}
-\subfile{chapter/appendix2}
-
+\include{chapter/bibliography}
+% \subfile{chapter/appendix2}
 % 後書き
 \backmatter
 \appendix
@@ -66,5 +61,4 @@
 % \printindex
 % \bibliographystyle{plain} %参考文献出力スタイル
 % \bibliography{/Users/ikedahajime/GitHub/reserch/master_report/bib/liter.bib} %hoge.bibから拡張子を外した名前
-
 \end{document}

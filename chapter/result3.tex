@@ -2,10 +2,10 @@
 % このファイル内だけのコマンド
 \begin{document}
 % \chapter{結果}
-\section{CABPの結果}
-この章では、高密度のCABPを円形領域に閉じ込めた時の結果を示す。%小説での結果のreview
+\section{CABPの結果}\label{sec:result_cabp}
+本節では、高密度のCABPを円形領域に閉じ込めた時の結果を示す。%小説での結果のreview
 \subsection{系全体のダイナミクス}\label{subsec:CABPdinamicse}
-まず、時間依存性について議論する。はじめに、規格化された角運動量の時間変化を見る。
+まず、系全体の流れについて議論する。はじめに、規格化された角運動量の時間変化を見る。
 \figref{fig:CABP_V_timedep}はパラメータを変化させた時の規格化された角運動量$V$の時間依存性を表すグラフである。
 この図におけるパラメータは密度$\varphi=1.209$、$R=10$である。
 代表的なパラメータとして(a)は$R_{\Omega}=0.1$、(b)は$R_{\Omega}=10$、(c)は$R_{\Omega}=1000$
@@ -16,11 +16,11 @@
 ことがわかる。
 最後により$R_{\Omega}$を大きくした(c)を見ると、$V$は時間によらず１で一定であり、この領域では粒子全体が１つの渦となって、
 定常的な流れをなしていることがわかる。ここでは、(a)のように$V$の絶対値が小さく粒子が一方向に進まない領域を乱雑相、(b)のように$V$の絶対値が
-1に近く、その符号が正負に振動している領域を振動相、(c)のように$V$の値が時間によらず１で一定の領域を定流相と呼ぶことにする。\\
+1に近く、その符号が正負に振動している領域を振動相、(c)のように$V$の値が時間によらず１で一定の領域を定流相と呼ぶことにする。
 
 
 
-\begin{figure}[H]
+\begin{figure}
     \centering
     \begin{tabular}{c}
     % ----- image 1 =====
@@ -45,7 +45,7 @@
     \caption[Four sample images]
     {
         円の中に拘束された高密度CABPにおける$V(t)$の時間依存性。(a) $R_{\Omega}=0.1$ (b) $R_{\Omega}=10$ (c) $R_{\Omega}=1000$ で、
-        $R=10 , \varphi=1.209$。
+        $R=10、\varphi=1.209$。
         $R_{\Omega}$を大きくするにつれて、振幅が大きくなり、また定常的な流れへと遷移していることがわかる。
     }
     \label{fig:CABP_V_timedep}
@@ -59,8 +59,10 @@
 これは$|V|$の変化、つまり全粒子の整列が$R_\Omega^{1/2}$に、$V$の変化、つまり流れの定常化が$R_\Omega^1$
 に比例して起きていることを示す。特に$|V|$の変化、つまり乱雑相と振動相の変化では$R\simeq\xi_\bot$においてパラメータの値が大きくなっている。
 バルク系における相関長の大きさが拘束している円の半径と同等になったときに系全体が１つの渦になっていることを
-示しており、これは他の系における結果と一致する。\\%TODO*cite
-\begin{figure}[htbp]
+示しており、これは他の系における結果と一致する。%TODO*cite
+
+
+\begin{figure}
     \centering
     \begin{tabular}{c}
         \begin{minipage}{0.3\hsize}
@@ -91,7 +93,9 @@
         $V$の時間平均の値。(a)、(c)は$V$の絶対値の平均値、(b)、(d)は$V$の平均値のグラフ。
         横軸は$R_{\Omega}$で、横軸のみ対数軸である。
         (c)は横軸を$\xi_\bot/R \propto R_\Omega^{1/2}/R$\cite{kurodaLongrangeTranslationalOrder2024}で、
-        (d)は横軸を$R_\Omega/R$でそれぞれスケールしてある。\\
+        (d)は横軸を$R_\Omega/R$でそれぞれスケールしてある。
+
+
         (e)は$\langle |\bar{V}| \rangle$と$\langle \bar{V} \rangle$の値を元にした相図。
         横軸は$R_\Omega$、縦軸は$R$であり、両軸は対数軸。
         $\langle |\bar{V}| \rangle<0.8$かつ$\langle \bar{V} \rangle<0.8$の点を青色、
@@ -102,11 +106,13 @@
     }
     \label{fig:vabs_vave_state}
 \end{figure}
-振動相と定流相の間の遷移はRef \cite{capriniSelfrevertingVorticesChiral2024}と同様に、
+振動相と定流相の間の遷移は先行研究 \cite{capriniSelfrevertingVorticesChiral2024}と同様に、
 １つの粒子が幅が$1\sigma$のリングの中に閉じ込められている状態を考えることで理解できる。
 $R_\Omega$が半径$R$よりも大きい時、粒子の自己推進の方向はリングの接線方向と常に一定の角度を
 なしている。しかし$R_\Omega$が半径$R$よりも小さい時、粒子がリングを一周するよりも早く自己推進の方向が
-一周するため、粒子は進行方向を反転し、結果周期的な運動をする。\\%TODO:持っと簡単な説明
+一周するため、粒子は進行方向を反転し、結果周期的な運動をする。%TODO:持っと簡単な説明
+
+
 \figref{fig:vabs_vave_state}(e)はこれらの結果を元に描いた相図である。縦軸は$R$、横軸は$R_\Omega$で、
 両方の軸は対数である。$\langle |\bar{V}| \rangle<0.8$かつ$\langle \bar{V} \rangle<0.8$の点を青色、
 $\langle |\bar{V}| \rangle>0.8$かつ$\langle \bar{V} \rangle<0.8$の点を緑色、
@@ -117,10 +123,46 @@ $R\propto R_\Omega$の線で振動相と定流相が分けられることがわ�
 %周期（時間依存性）
 %全体うず(相図)
 %ふくうず
-\subsection{部分}%TODO：タイトルを治す
-続いて、円の中に発生する渦について調べる。:粒子のずを見ると、乱雑相において、円の中で複数の渦が生まれているように
+\subsection{内部に発生する渦}
+続いて、円の中に発生する渦について調べる。\figref{fig:CABP_coor}粒子のずを見ると、乱雑相において、円の中で複数の渦が生まれているように
 見える。実際に渦度を見ると、複数の、粒径よりも大きな渦が発生していることがわかる。
-TODO:粒子のず\\
+\begin{figure}
+    \centering
+    \begin{tabular}{c}
+        \begin{minipage}{0.3\hsize}
+            \text{(a)}
+            \includegraphics[width=\textwidth]{img/chiral/HAMLOD3_RAT40/volR20_Rc0.1.pdf}
+        \end{minipage}
+        \begin{minipage}{0.3\hsize}
+            \text{(b)}
+            \includegraphics[width=\textwidth]{img/chiral/HAMLOD3_RAT40/volR20_Rc1.0.pdf}
+        \end{minipage}
+        \begin{minipage}{0.3\hsize}
+            \text{(c)}
+            \includegraphics[width=\textwidth]{img/chiral/HAMLOD3_RAT40/volR20_Rc100.0.pdf}
+        \end{minipage}\\
+        \begin{minipage}{0.3\hsize}
+            \text{(d)}
+            \includegraphics[width=\textwidth]{img/chiral/HAMLOD3_RAT40/fai6R20_Rc0.1.pdf}
+        \end{minipage}
+        \begin{minipage}{0.3\hsize}
+            \text{(e)}
+            \includegraphics[width=\textwidth]{img/chiral/HAMLOD3_RAT40/fai6R20_Rc1.0.pdf}
+        \end{minipage}
+        \begin{minipage}{0.3\hsize}
+            \text{(f)}
+            \includegraphics[width=\textwidth]{img/chiral/HAMLOD3_RAT40/fai6R20_Rc100.0.pdf}
+        \end{minipage}
+    \end{tabular}
+    \caption[CABP_coor]
+    {
+        高密度CABPのスナップショット。(a)〜(c) は渦度場のスナップショットであり、矢印は各粒子の速度ベクトルを表す。
+        (d)〜(e) は粒子の$\phi_6$である。各図において、パラメータは$R=20、\varphi=1.209$とし、
+        (a)、(d) では$R_\Omega=0.1$、(b)、(e) では、$R_\Omega=1$、
+        (c)、(f) では$R_\Omega=100$を用いた。
+    }
+    \label{fig:CABP_coor}
+\end{figure}
 この小さな渦を定量的に評価するため、方位角成分の運動量運動量を見る。\figref{fig:chiral_vel_modes}は方位角成分の運動量
 を$R_\Omega$の関数としてプロットしたものである。横軸は\figref{fig:vabs_vave_state}(c)と同様に相関長を半径で割った量
 $\xi_\bot/R$でそれぞれスケールしており、対数軸にとっている。また、この系では$R_\Omega$が大きくなるに従って粒子の速度は遅くなる。
@@ -128,22 +170,22 @@ $\xi_\bot/R$でそれぞれスケールしており、対数軸にとってい�
 この影響を避けるため、ここでは30次の運動量まで計算して、0次から30次までの総和で割った量をプロットした。
 \figref{fig:chiral_vel_modes}(a)は0次、(b)は1次、(c)は2次、(d)は3次の方位角成分の運動量を表す。
 
-\begin{figure}[htbp]
+\begin{figure}
     \centering
     \begin{tabular}{c}
-        \begin{minipage}{0.24\hsize}
+        \begin{minipage}{0.4\hsize}
             \text{(a)}
             \includegraphics[width=\textwidth]{img/chiral/HAMLOD3MORE_RAT40/vel_modes_0log_xdivide_Rx_sqrt_2.pdf}
         \end{minipage}
-        \begin{minipage}{0.24\hsize}
+        \begin{minipage}{0.4\hsize}
             \text{(b)}
             \includegraphics[width=\textwidth]{img/chiral/HAMLOD3MORE_RAT40/vel_modes_1log_xdivide_Rx_sqrt_2.pdf}
-        \end{minipage}
-        \begin{minipage}{0.24\hsize}
+        \end{minipage}\\
+        \begin{minipage}{0.4\hsize}
             \text{(c)}
             \includegraphics[width=\textwidth]{img/chiral/HAMLOD3MORE_RAT40/vel_modes_2log_xdivide_Rx_sqrt_2.pdf}
         \end{minipage}
-        \begin{minipage}{0.24\hsize}
+        \begin{minipage}{0.4\hsize}
             \text{(d)}
             \includegraphics[width=\textwidth]{img/chiral/HAMLOD3MORE_RAT40/vel_modes_3log_xdivide_Rx_sqrt_2.pdf}
         \end{minipage}
@@ -158,14 +200,15 @@ $\xi_\bot/R$でそれぞれスケールしており、対数軸にとってい�
 \end{figure}
 
 まず\figref{fig:chiral_vel_modes}(a)は0次の方位角成分の運動量であり、この量は系全体の渦について表すモードであるため、
-\figref{fig:vabs_vave_state}(c)と同等の量について表しており、それと同様に$R\simeq\xi_\bot$に付近でパラメータの値が大きくなっている。
+\figref{fig:vabs_vave_state}(c)と同様の性質を持つ量について表しており、それと同様に$R\simeq\xi_\bot$に付近でパラメータの値が大きくなっている。
 \figref{fig:chiral_vel_modes}(b)(c)(d)はそれぞれ1次、2次、3次の方位角成分の運動量で、これらは渦が2個、4個、8個あることを示す。
 それぞれのグラフを見ると、いずれも$\xi_\bot/R$でそれぞれスケーされており、これらの量が相関長と円の半径の比によって変化している
 ことがわかる。また、これらの量はいずれも１つのピークを持っており、そのピークの位置は次数が大きくなるにつれて$R_\Omega$が小さく
 なる方向へと動いていることがわかる。
 
-\ifSubfilesClassLoaded{
-    \printbibliography[title=参考文献]
-    % \include{/Users/ikedahajime/GitHub/reserch/master_report/chapter/bibliography.tex}
-    }{}
+
+ここで、\figref{fig:CABP_coor}に再度注目する。$\phi_6$に注目すると、円の中心付近ではその絶対値が1に近く、
+ほとんどの粒子が結晶構造をなしていることが分かる。これは$R_{\Omega}=100$の渦が1つの状態だけでなく、
+$R_{\Omega}=0.1、1$の渦が複数存在する状態においても結晶構造をなしている。つまり、これらの系では
+粒子配置を壊すことなく速度が渦をなしていると言える。
 \end{document}

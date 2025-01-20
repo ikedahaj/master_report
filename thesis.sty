@@ -22,7 +22,7 @@
 
 \renewcommand{\figurename}{Fig.}
 \renewcommand{\tablename}{Table}
-
+% \renewcommand{\rom}{R_\Omega}
 % 参照を楽にするコマンド
 \def \figref #1{\figurename\ref{#1}}
 \def \tbref #1{\tablename\ref{#1}}
@@ -42,7 +42,7 @@
     \thispagestyle{empty}
     \begin{center}
         \vspace*{2cm}
-        \LARGE \@thesis 
+        \LARGE \@thesis
         \hspace*{\fill}\leavevmode\\
         \vspace{2cm}
         \LARGE{\bf \@title}
@@ -50,10 +50,10 @@
         \label{font_title}
         \Large
         \vspace{2cm}
-        \@date \hspace*{0.5zw}提出 
+        % \@date \hspace*{0.5zw}提出
         \hspace*{\fill}\leavevmode\\
         \vspace{1cm}
-        指導教員 \@teacher 
+        % 指導教員 \@teacher
         \hspace*{\fill}\leavevmode\\
         \Large
         \@organization
