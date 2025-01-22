@@ -13,15 +13,15 @@ iABP モデルは以下のように表される。
     % \dot{\bm{r}_i}(t) &=& \zeta \bm{F}_i(t)+v_0 \bm{e}(\theta_i (t))
 \end{eqnarray}
 \begin{eqnarray}\label{eq:eom_iabp_2}
-    \dot{\theta_i }(t) &=& \sqrt{\frac{2}{\tau}}\eta_i(t)
+    \dot{\theta_i }(t) &=& \sqrt{\frac{2}{\tau_p}}\eta_i(t)
 \end{eqnarray}
 ここで、\mbox{\boldmath$r$}は粒子の位置、$v_0$ は自己推進の速度、$\zeta$ は摩擦係数を表す。
 $\eta_i$ はホワイトノイズで、$\langle \eta_i(t) \eta_j(t') \rangle=\delta_{ij}\delta(t-t')$の関係を満たす。
 ここで、$\langle \dots \rangle$ はアンサンブル平均である。
 $\mbox{\boldmath$e$}(\theta_i)=(\cos\theta_i,\sin \theta_i)$は自己推進の方向を表す単位ベクトルで、
-$\tau$は緩和時間である。
+$\tau_p$は持続時間である。
 このモデルには2つの緩和時間が存在する。1つは ABP の持つ自己推進の方向を変えるまでの時間であり、
-$t_\tau=\tau$である。もう1つは慣性による緩和時間であり、これは$m/\zeta$と表される。
+$\tau_p$である。もう1つは慣性による緩和時間であり、これは$\tau_m=m/\zeta$と表される。
 
 
 $\bm{F}_i$は相互作用を表し、二体間相互作用ポテンシャル$U(r)$と壁との相互作用$\bm{F}_{wall}$を用いて
@@ -73,7 +73,7 @@ $r_{wall}$は$r_{wall}=R+0.5\sigma-\left|\bm{r}-\bm{r}_{c_i}\right|$
     \label{fig:setup_circles}
 \end{figure}
 数値計算のため、長さの単位を$\sigma$、時間の単位を$\sigma/v_0$と置いた。無次元化した質量$M=mv_0/\zeta\sigma$、
- Péclet 数$Pe=v_0\tau/\sigma$、エネルギーと速度の比$\epsilon^*=\epsilon/\sigma v_0 \zeta$
+ Péclet 数$Pe=v_0\tau_p/\sigma$、エネルギーと速度の比$\epsilon^*=\epsilon/\sigma v_0 \zeta$
 をパラメータに取り、このうち$\epsilon^*=1$とした。
 粒子数$N$は、面積分率$\varphi$と系の面積$S$を用いて$N=4\varphi S/\pi\sigma^2$とした。
 コントロールパラメータとして、系の半径$R、Pe、M、\varphi$を用いた。
@@ -87,7 +87,7 @@ $r_{wall}$は$r_{wall}=R+0.5\sigma-\left|\bm{r}-\bm{r}_{c_i}\right|$
     \dot{\bm{r}_i}(t) &=& \frac{1}{\zeta} \bm{F}_i(t)+v_0 \bm{e}(\theta_i (t))
 \end{eqnarray}
 \begin{eqnarray}\label{eq:eom_CABP_2}
-    \dot{\theta_i }(t) &=& \Omega+\sqrt{\frac{2}{\tau}}\eta_i(t)
+    \dot{\theta_i }(t) &=& \Omega+\sqrt{\frac{2}{\tau_p}}\eta_i(t)
 \end{eqnarray}
 ここで、$\Omega$はキラリティーの強度である。このモデルは ABP にキラリティーの効果を加えたモデルである。
 この効果によって粒子の運動方向が曲がり、典型的には円軌道を描く。
@@ -120,7 +120,7 @@ $r_{wall}$は$r_{wall}=R+0.5\sigma-\left|\bm{r}-\bm{r}_{c_i}\right|$
 力の大きさを表す定数を$c_{wall}=100$とした。
 
 
-本研究では最も簡単な場合として揺らぎがゼロ、つまり緩和時間$\tau=\infty$の極限を解析した。
+本研究では最も簡単な場合として揺らぎがゼロ、つまり持続時間$\tau_p=\infty$の極限を解析した。
 $\epsilon^*=40$に固定し、コントロールパラメータとして系の半径$R$、粒子の回転半径$R_\Omega=v_0/\Omega$、面積分率$\varphi$を用いた。
 
 
@@ -182,13 +182,13 @@ $\epsilon^*=40$に固定し、コントロールパラメータとして系の�
 \end{align}
 となり、これは速度をフーリエ変換したものの2乗であることがわかる。
 
-この変数の典型的な動きを知るために、簡単な簡単な1粒子 iABP について解析する。\equref{eq:eom_iabp_1}、\equref{eq:eom_iabp_2}から、
-1粒子 iABP は以下のように表される。
+この変数の典型的な動きを知るために、相互作用のない一粒子 iABP について解析的に計算する。\equref{eq:eom_iabp_1}、\equref{eq:eom_iabp_2}から、
+一粒子 iABP は以下のように表される。
 \begin{eqnarray}\label{eq:eom_iabp_single_1}
     m\dot{\bm{v}_i}(t)&=& - \zeta \bm{v}_i  +\zeta v_0 \bm{e}(\theta_i(t))
 \end{eqnarray}
 \begin{eqnarray}
-    \dot{\theta_i }(t) &=& \sqrt{\frac{2}{\tau}}\eta_i(t)
+    \dot{\theta_i }(t) &=& \sqrt{\frac{2}{\tau_p}}\eta_i(t)
 \end{eqnarray}
 \equref{eq:eom_iabp_single_1}を時間についてフーリエ変換して自己駆動項を$f(t)=v_0 \bm{e}(\theta_i(t))$とおくと、
 \begin{eqnarray}
@@ -197,12 +197,30 @@ $\epsilon^*=40$に固定し、コントロールパラメータとして系の�
 \begin{eqnarray}
     \bm{v}&=&\frac{\zeta \bm{f}(\omega)}{im+\zeta}
 \end{eqnarray}
-したがって、$|\bm{f}(\omega)|^2=v_0^2/(1+\tau^2)$なので、
+したがって、
 \begin{eqnarray}
-    \left|\bm{v}\right|^2&=&\frac{v_0^2}{\left(1+m^2/\zeta^2\right)\left(1+\tau^2\right)}
+    \left|\bm{v}\right|^2&=&\frac{|\bm{f}(\omega)|^2}{\left(1+m^2/\zeta^2\right)}
 \end{eqnarray}
-となる。つまり、このモデルには速度について慣性による緩和時間$t_m=m/\zeta$と、自己駆動力による緩和時間
-$t_\tau=\tau$が存在することがわかる。
+ここで、 ABP 系において角度$\theta(t)$の確率分布関数$P(\theta,t)$は
+\begin{eqnarray}
+    P(\theta,t)&=&\frac{1}{\sqrt{4\pi t/\tau_p}}\exp\left(-\frac{(\theta-\theta_0)^2}{4t/\tau_p}\right)
+\end{eqnarray}
+である。よって、
+\begin{eqnarray}
+    \langle f(t)f(0) \rangle&=&\int_{-\infty}^{\infty} d\theta \cos(\theta)P(\theta,t)=e^{-\frac{t}{\tau_p}}
+\end{eqnarray}
+となるので、一粒子 iABP はに対する速度相関関数のフーリエ変換は以下のように表される。
+\begin{equation}\label{eq:intro_ft_about_iabp}
+    \left|\bm{v}\right|^2=\frac{|\bm{f}(\omega)|^2}{\left(1+\tau_m^2\right)\left(1+\tau_p^2\right)}
+\end{equation}
+ここで、$\tau_m=m/\zeta$は慣性の効果による緩和時間である。
+
+この関数の極限について考える。この関数には$\tau_p$と$\tau_m$について対称性が存在する。
+そのため、$\tau_p>\tau_m$の場合を考えたとしても関数の性質には影響しないので、ここでは$\tau_p \gg  \tau_m$の場合について考える。
+まず$\omega\ll 2\pi/\tau_p$の極限においては$\left|\bm{v}\right|^2 \thicksim v_0^2$であり定数となる。
+続いて$2\pi/\tau_p \leq \omega \leq 2\pi/\tau_m$の領域では、$\left(1+\tau_m^2\right)$の項が無視できるほど小さいため
+この関数は$\omega^{-2}$に比例する。その後$\omega \gg 2\pi/\tau_m$においては$\omega^{-4}$に比例する。
+
 \begin{figure}
     \centering
     \begin{tabular}{c}
@@ -213,11 +231,17 @@ $t_\tau=\tau$が存在することがわかる。
     \end{tabular}
     \caption[Four sample images]
     {
-        1粒子 iABP における速度の自己相関関数のフーリエ変換の理論曲線。
-        $t_{m}=0.1$とした。図中の曲線は、それぞれ異なる$\tau$におけるグラフを表す。
+        一粒子 iABP における速度の自己相関関数のフーリエ変換の理論曲線。
+        $\tau_{m}=0.1$に固定した。図中の曲線は、それぞれ異なる$\tau_p$におけるグラフを表し、
+        点線はそれぞれ$\omega^{-2}、\omega^{-4}$に比例する直線を表す。
     }%TODOレーヴェンのcabp len ni
-    \label{fig:sample_four_images}
+    \label{fig:method_ft_single}
 \end{figure}
+
+
+この結果をグラフにしたものが\figref{fig:method_ft_single}である。
+この図からも分かるように、2つの緩和時間$\tau_m$と$\tau_p$の大小によって
+グラフはその冪を変える。
 %TODO:一粒子系のず
 
 \subsection{円を2つに分けた時の物理量}
@@ -269,12 +293,12 @@ $t_\tau=\tau$が存在することがわかる。
 
 \subsection{結晶秩序変数}
 結晶化について議論するためのオーダーパラメータの1つに結晶秩序変数$\phi_6$がある。
-このパラメータは系が結晶構造をなしているかを表す物理量で、以下のように定義される。
-本研究では、一粒子に対するパラメータ$\phi_{6j}$を用いる。
+このパラメータは系が結晶構造をなしているかを表す物理量である。
+本研究では、以下のように定義される、一粒子に対するパラメータ$\phi_{6j}$を用いる。
 \begin{equation}
     \phi_{6j}=\frac{1}{6}\sum_{k\in \mathcal{N}_{6j}} e^{6i\theta_{jk}}
 \end{equation}
-ここで、$\mathcal{N}_{6j}$は$j$番目の粒子の6つの最近説粒子を、$\theta_{jk}$は
+ここで、$\mathcal{N}_{6j}$は$j$番目の粒子の6つの最近接粒子を、$\theta_{jk}$は
 ベクトル$\bm{r}_j-\bm{r}_k$がx軸となす角度である。
-
+% TODO:もっと説明
 \end{document}

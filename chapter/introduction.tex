@@ -105,13 +105,13 @@ ABPモデルは以下のように表される。
     \dot{\bm{r}_i}(t)&=& \frac{1}{\zeta}\bm{F}_i + v_0 \bm{e}(\theta_i(t))
 \end{eqnarray}
 \begin{eqnarray}\label{eq:eom_abp_2}
-    \dot{\theta_i }(t) &=& \sqrt{\frac{2}{\tau}}\eta_i(t)
+    \dot{\theta_i }(t) &=& \sqrt{\frac{2}{\tau_p}}\eta_i(t)
 \end{eqnarray}
 ここで、\mbox{\boldmath$r$}は粒子の位置、$v_0$ は自己推進の速度、$\zeta$ は摩擦係数を表す。
 $\eta_i$ はホワイトノイズで、$\langle \eta_i(t) \eta_j(t') \rangle=\delta_{ij}\delta(t-t')$の関係を満たす。
 ここで、$\langle \dots \rangle$ はアンサンブル平均である。
 $\mbox{\boldmath$e$}(\theta_i)=(\cos\theta_i,\sin \theta_i)$は自己推進の方向を表す単位ベクトルで、
-$\tau$は緩和時間である。
+$\tau_p$は持続時間である。
 \begin{figure}
     \centering
     \begin{tabular}{c}
@@ -128,9 +128,9 @@ $\tau$は緩和時間である。
 \end{figure}
 \equref{eq:eom_abp_1}は平衡系におけるブラウン運動に似た形を持つ。唯一の違いは違いは右辺第2項であり、
 この項は角度$\theta_i$の方向に、速度$v_0$で進むことを表す。
-その角度$\theta_i$の拡散には持続時間$\tau$が程度の時間がかかる。つまりこの粒子は、
+その角度$\theta_i$の拡散には持続時間$\tau_p$が程度の時間がかかる。つまりこの粒子は、
 \figref{fig:intro_saple_abp}のように
-典型的には速度$v_0$でその進行方向を時間$\tau$の間変えず同じ方向へ進み続ける。
+典型的には速度$v_0$でその進行方向を時間$\tau_p$の間変えず同じ方向へ進み続ける。
 
 
 このモデルは整列相互作用や流体力学相互作用などの複雑な相互作用が顕に
