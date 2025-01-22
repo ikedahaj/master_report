@@ -6,5 +6,56 @@
 \renewcommand{\thechapter}{\Alph{chapter}}
 \setcounter{chapter}{0}
 
-\chapter{解析手法について}
+\chapter{1粒子系について}
+この章では、1粒子 ABP、CABP に対する解析計算を示す。
+\section{iABPにおける速度相関のフーリエ変換}
+1粒子iABPは、\equref{eq:eom_iabp_1}、\equref{eq:eom_iabp_2}から以下のように表される。
+\begin{eqnarray}\label{eq:eom_iabp_1}
+    \dot{\bm{v}}(t)&=& - \zeta \bm{v}  +\zeta v_0 \bm{e}(\theta(t))
+    % \dot{\bm{r}}(t) &=& \zeta \bm{F}(t)+v_0 \bm{e}(\theta (t))
+\end{eqnarray}
+\begin{eqnarray}\label{eq:eomabp_2}
+    \dot{\theta }(t) &=& \sqrt{\frac{2}{\tau}}\eta(t)
+\end{eqnarray}
+
+
+\section{CABPの1粒子1次元系における解析}
+1粒子CABPは、\equref{eq:eom_CABP_1}、\equref{eq:eom_CABP_2}から以下のように表される。
+\begin{eqnarray}\label{eq:eom_CABP_1}
+    \dot{\bm{r}_i}(t) &=& \frac{1}{\zeta} \bm{F}_{wall}(t)+v_0 \bm{e}(\theta_i (t))
+\end{eqnarray}
+\begin{eqnarray}\label{eq:eom_CABP_2}
+    \dot{\theta_i }(t) &=& \Omega
+\end{eqnarray}
+この粒子をリング状の壁に閉じ込めると、この方程式は極座標を用いて以下のように表される。
+\begin{align}
+    v_r&=0
+    v_t&=v_0 \sin(\theta_i-\theta_r)
+\end{align}
+ここで、$v_r$は方線方向、$v_t$は角度方向の粒子速度であり、$\theta_r$は粒子ベクトル$\bm{r}$とx軸正の向きとのなす角であり、
+$v_t=R\dot{\theta_r}$。
+放線方向の軸と自己駆動の方向がなす角$\theta_{ar}=\theta_i-\theta_r$とおくと、
+\begin{align}
+    \dot{\theta_{ar}}&=\dot{\theta_i}-\dot{\theta_r}
+    &=\Omega-\frac{v_0}{R}\sin \theta_{ar}
+\end{align}
+これは1階微分方程式なので解析的に解けて、粒子の回転半径$R_\Omega$と円の半径$R$の比を$rat_r$とおくと以下のようになる。
+\begin{equation}
+    \theta_{ar}=
+    \begin{cases}
+        2 \arctan(-rat_r+\sqrt{1-rat_r}\tan (\frac{\sqrt{1-rat_r^2}}{2}\Omega t))&(rat_r<1)\\
+        2 \arctan(1-\frac{2}{\Omega t}) &(rat_r=1)\\
+        2 \arctan(rat_r+\sqrt{rat_r^2-1}\tanh(-\sqrt{rat_r^2-1}\Omega t))& (rat_r>1)
+    \end{cases}
+\end{equation}
+平衡化すると、
+\begin{equation}
+    \theta_{ar}=
+    \begin{cases}
+        2 \arctan(-rat_r+\sqrt{1-rat_r}\tan (\frac{\sqrt{1-rat_r^2}}{2}\Omega t))&(rat_r<1)\\
+        \frac{\pi}{2}\\
+        2 \arctan(rat_r+\sqrt{rat_r^2-1})& (rat_r>1)
+    \end{cases}
+\end{equation}
+
 \end{document}

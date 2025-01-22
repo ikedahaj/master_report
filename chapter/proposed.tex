@@ -8,18 +8,20 @@
 \secref{sec:result_abp}では inertial inertial Active Brownian Particles(iABP) モデルを用いた。
 iABP モデルは以下のように表される。
 % ABPの方程式
-\begin{eqnarray}
-    \dot{\bm{v}_i}(t)&=& - \zeta \bm{v}_i  +\bm{F}_i +\zeta v_0 \bm{e}(\theta_i(t))
+\begin{eqnarray}\label{eq:eom_iabp_1}
+    m\dot{\bm{v}_i}(t)&=& - \zeta \bm{v}_i  +\bm{F}_i +\zeta v_0 \bm{e}(\theta_i(t))
     % \dot{\bm{r}_i}(t) &=& \zeta \bm{F}_i(t)+v_0 \bm{e}(\theta_i (t))
 \end{eqnarray}
-\begin{eqnarray}
+\begin{eqnarray}\label{eq:eom_iabp_2}
     \dot{\theta_i }(t) &=& \sqrt{\frac{2}{\tau}}\eta_i(t)
 \end{eqnarray}
 ここで、\mbox{\boldmath$r$}は粒子の位置、$v_0$ は自己推進の速度、$\zeta$ は摩擦係数を表す。
 $\eta_i$ はホワイトノイズで、$\langle \eta_i(t) \eta_j(t') \rangle=\delta_{ij}\delta(t-t')$の関係を満たす。
 ここで、$\langle \dots \rangle$ はアンサンブル平均である。
 $\mbox{\boldmath$e$}(\theta_i)=(\cos\theta_i,\sin \theta_i)$は自己推進の方向を表す単位ベクトルで、
-$\tau$は緩和時間である。このモデルは、各粒子が角度$\theta_i$の方向に、持続時間$\tau$の間、速度$v_0$で進むことを表す。
+$\tau$は緩和時間である。
+このモデルには2つの緩和時間が存在する。1つは ABP の持つ自己推進の方向を変えるまでの時間であり、
+$t_\tau=\tau$である。もう1つは慣性による緩和時間であり、これは$m/\zeta$と表される。
 
 
 $\bm{F}_i$は相互作用を表し、二体間相互作用ポテンシャル$U(r)$と壁との相互作用$\bm{F}_{wall}$を用いて
@@ -34,23 +36,39 @@ $\bm{F}_i=-\sum_{i\neq j} \bm{\nabla}_iU(r_{ij})+c_{wall}\bm{F}_{wall}$と書け
     \end{cases}
 \end{equation}
 ここで、$r_{ij}=\left|\bm{r}_i-\bm{r}_j\right|$は粒子間距離、$\sigma$は粒径、$\epsilon$は相互作用の強度である。
-本研究では粒子を閉じ込める壁を\figref{fig:setup_circles}のように取る。壁との相互作用には同じポテンシャルを用い、壁による力は
+\secref{sec:result_abp}では粒子を閉じ込める壁を\figref{fig:setup_circles}(a)のように取る。壁との相互作用には同じポテンシャルを用い、壁による力は
 $\bm{F}_{wall}=-\bm{\nabla}U(r_{wall})$と表される。
 $r_{wall}$は壁と粒子の距離を表し、$\bm{r}_c$を円の中心をさすベクトルとして$r_{wall}=R+0.5\sigma-\left|\bm{r}-\bm{r}_c\right|$
 と表される。
+
+\secref{sec:res_abp_twowall}においては、\figref{fig:setup_circles}(b) のように2つの円をつなげた形の
+壁で粒子を閉じ込める。
+この系における壁との相互作用についても同様に WCA ポテンシャルを用いた。
+$\bm{r}_{c_1}$を$x<0$に存在する粒子が相互作用する円の中心を、
+$\bm{r}_{c_2}$を$x>0$に存在する粒子が相互作用する円の中心を指すベクトルとおく。
+これらの2つの円の間の距離は$\Delta$であり、2つの円の中心をさすベクトル$\bm{r}_{c_1}、\bm{r}_{c_1}$は
+それぞれ$(-\Delta/2,0)、(\Delta/2,0)$と表される。
+$r_{wall}$は$r_{wall}=R+0.5\sigma-\left|\bm{r}-\bm{r}_{c_i}\right|$
+のようにおいた。ただし、2つの円の接合部である$-0.5\sigma<x<0.5\sigma$においては仮想粒子を$(x,y)=(0,\pm\sqrt{(R+0.5\sigma)^2-(\Delta/2)^2})$
+に置いて、それらとの相互作用を壁との相互作用とした。
 
 
 \begin{figure}
     \centering
     \begin{tabular}{c}
         \begin{minipage}{0.2\hsize}
-            % \text{(a)}
+            \text{(a)}
             \includegraphics[width=\textwidth]{img/method/fig_sincer.png}
+        \end{minipage}
+        \begin{minipage}{0.35\hsize}
+            \text{(b)}
+            \includegraphics[width=\textwidth]{img/method/fig_twocer.png}
         \end{minipage}
     \end{tabular}
     \caption[fig:circle]
     {
-        円が１つの系の壁に関する模式図。
+        (a) 円が１つの系における壁に関する模式図。
+        (b) 円が2つの系における壁に関する模式図。
     }
     \label{fig:setup_circles}
 \end{figure}
@@ -65,13 +83,29 @@ $r_{wall}$は壁と粒子の距離を表し、$\bm{r}_c$を円の中心をさす
 \secref{sec:result_cabp}では、ABPにキラリティーに関する項を加えた、 Chiral Active Brownian Particles(CABP)%\cite{teeffelenDynamicsBrownianCircle2008}%TODO::aliment forceがないものに変える
 を用いた。このモデルは以下のように表される。
 % CABPの方程式
-\begin{eqnarray}
+\begin{eqnarray}\label{eq:eom_CABP_1}
     \dot{\bm{r}_i}(t) &=& \frac{1}{\zeta} \bm{F}_i(t)+v_0 \bm{e}(\theta_i (t))
 \end{eqnarray}
-\begin{eqnarray}
+\begin{eqnarray}\label{eq:eom_CABP_2}
     \dot{\theta_i }(t) &=& \Omega+\sqrt{\frac{2}{\tau}}\eta_i(t)
 \end{eqnarray}
-ここで、$\Omega$はキラリティーの強度である。
+ここで、$\Omega$はキラリティーの強度である。このモデルは ABP にキラリティーの効果を加えたモデルである。
+この効果によって粒子の運動方向が曲がり、典型的には円軌道を描く。
+その円軌道の半径は$R_\Omega=v_0/\Omega$で表される長さである。
+\begin{figure}
+    \centering
+    \begin{tabular}{c}
+        \begin{minipage}{0.6\hsize}
+            % \text{(a)}
+            \includegraphics[width=\textwidth]{img/method/cabp_motion.png}
+        \end{minipage}
+    \end{tabular}
+    \caption[Four sample images]
+    {
+        CABP における運動の模式図。
+    }
+    \label{fig:sample_four_images}
+\end{figure}
 
 ポテンシャルにはHarmonicポテンシャルを用いた。
 \begin{equation}
@@ -82,7 +116,8 @@ $r_{wall}$は壁と粒子の距離を表し、$\bm{r}_c$を円の中心をさす
 
     \end{cases}
 \end{equation}
-壁との相互作用には同様にHarmonicポテンシャルを用い、力の大きさを表す定数$c_{wall}=100$とした。
+壁との相互作用には同様にHarmonicポテンシャルを用い、粒子が円の外に出ることを防ぐため、
+力の大きさを表す定数を$c_{wall}=100$とした。
 
 
 本研究では最も簡単な場合として揺らぎがゼロ、つまり緩和時間$\tau=\infty$の極限を解析した。
@@ -94,7 +129,7 @@ $\epsilon^*=40$に固定し、コントロールパラメータとして系の�
 \subsection{渦秩序変数}\label{subsec:vortes_order_parameter}
 系が渦をなしているかどうかを定量化するために、
 渦秩序変数$\psi$\cite{wiolandConfinementStabilizesBacterial2013}を以下のように定義する。
-\begin{equation}
+\begin{equation}\label{eq:def_psi}
     \psi=\frac{\sum_i \left|\bm{v}_i\cdot \bm{t}_i \right|/\sum_i v_i -2/\pi}{1-2/\pi}
 \end{equation}
 ここで、$\bm{t}_i$は角度方向の単位ベクトルである。$\psi>0$の時は角度方向の流れが、$\psi<0$の時は動系方向の流れが生じていることがわかる。
@@ -121,6 +156,89 @@ $\epsilon^*=40$に固定し、コントロールパラメータとして系の�
 続いて、$|V|\simeq 1$として、その正負について考える。すると、値が負、つまり$V\simeq -1$のときは時計回りの渦が、
 値が正、つまり$V\simeq 1$のときは反時計回りの渦が発生していることを読み取ることができる。
 
+\subsection{自己相関関数のフーリエ変換}
+\secref{sec:result_abp}では、高密度系において時間に周期性のようなものが見られた。
+時間における周期性の判別には、自己相関関数のフーリエ変換がよく用いられる。
+まず、速度における時間のフーリエ変換は以下のように定義される。
+\begin{equation}
+    \tilde{v}(\omega) =\int_{-\infty}^{\infty} dt v(t)e^{-i\omega t}
+\end{equation}
+ここで、$\omega$は周波数である。
+フーリエ変換は、元の関数を様々な周波数を持つ波の重ね合わせとして表現する。この変換後の量$\tilde{v}(\omega)$
+は波の持つ振幅を表し、その絶対値$\left|\tilde{v}\right|^2(\omega)$は周波数$\omega$の波が持つエネルギースペクトルを表す。
+続いて、自己相関関数のフーリエ変換を考える。
+まず、速度の自己相関関数は以下のように表される。
+\begin{equation}
+    C_v(t)=\int_{-\infty}^{\infty} dt^\prime v(t+t^\prime)v(t^\prime)
+\end{equation}
+この関数のフーリエ変換は以下のように表される。
+\begin{align}
+    \tilde{C_v}(\omega)&= \int_{-\infty}^{\infty} dt C_v(t)e^{-i\omega t}\\
+    &=\int_{-\infty}^{\infty} dt \left(\int_{-\infty}^{\infty} dt^\prime v(t+t^\prime)v(t^\prime)\right)e^{-i\omega t} \\
+    &=\int_{-\infty}^{\infty} dt \int_{-\infty}^{\infty} dt^\prime v(t)v(t^\prime)e^{-i\omega(t-t^\prime)}\\
+    &=\int_{-\infty}^{\infty} dt v(t)e^{-i\omega t}\int_{-\infty}^{\infty}dt^\prime v(t^\prime)e^{i\omega t}\\
+    &=\tilde{v}(\omega)\tilde{v}^*(\omega)\\
+    &=\left| \tilde{v}(\omega) \right|^2
+\end{align}
+となり、これは速度をフーリエ変換したものの2乗であることがわかる。
+
+この変数の典型的な動きを知るために、簡単な簡単な1粒子 iABP について解析する。\equref{eq:eom_iabp_1}、\equref{eq:eom_iabp_2}から、
+1粒子 iABP は以下のように表される。
+\begin{eqnarray}\label{eq:eom_iabp_single_1}
+    m\dot{\bm{v}_i}(t)&=& - \zeta \bm{v}_i  +\zeta v_0 \bm{e}(\theta_i(t))
+\end{eqnarray}
+\begin{eqnarray}
+    \dot{\theta_i }(t) &=& \sqrt{\frac{2}{\tau}}\eta_i(t)
+\end{eqnarray}
+\equref{eq:eom_iabp_single_1}を時間についてフーリエ変換して自己駆動項を$f(t)=v_0 \bm{e}(\theta_i(t))$とおくと、
+\begin{eqnarray}
+    im\omega\bm{v}&=&- \zeta \bm{v}_i  +\zeta \bm{f}(\omega)
+\end{eqnarray}
+\begin{eqnarray}
+    \bm{v}&=&\frac{\zeta \bm{f}(\omega)}{im+\zeta}
+\end{eqnarray}
+したがって、$|\bm{f}(\omega)|^2=v_0^2/(1+\tau^2)$なので、
+\begin{eqnarray}
+    \left|\bm{v}\right|^2&=&\frac{v_0^2}{\left(1+m^2/\zeta^2\right)\left(1+\tau^2\right)}
+\end{eqnarray}
+となる。つまり、このモデルには速度について慣性による緩和時間$t_m=m/\zeta$と、自己駆動力による緩和時間
+$t_\tau=\tau$が存在することがわかる。
+\begin{figure}
+    \centering
+    \begin{tabular}{c}
+        \begin{minipage}{0.7\hsize}
+            % \text{(a)}
+            \includegraphics[width=\textwidth]{img/method/ft_vcor.pdf}
+        \end{minipage}
+    \end{tabular}
+    \caption[Four sample images]
+    {
+        1粒子 iABP における速度の自己相関関数のフーリエ変換の理論曲線。
+        $t_{m}=0.1$とした。図中の曲線は、それぞれ異なる$\tau$におけるグラフを表す。
+    }%TODOレーヴェンのcabp len ni
+    \label{fig:sample_four_images}
+\end{figure}
+%TODO:一粒子系のず
+
+\subsection{円を2つに分けた時の物理量}
+粒子を拘束する円を2つに分けた時の物理量は渦秩序変数、および規格化された角運動量を円が2つの場合に拡張したものを使う。
+このオーダーパラメータは以下のように定義される。
+\begin{equation}
+    V_2={\mathop{\mathrm{sign}}\nolimits} (V)\sqrt{|V|}
+\end{equation}
+ここで、$V=(\sum_{x<0} L_{zc_1}/|L_{zc_1}|)(\sum_{x>0}L_{zc_2}/|L_{zc_2}|)$で、$L_{zc_i}$は$r_{c_i}$を中心とする角運動量である。
+このパラメータは、渦が強磁性的で2つの渦が同じ方向に渦巻いているのであれば1を、
+反強磁性的2つの渦が逆の方向に渦巻いているのであれば-1にそれぞれ近づくことを表す。
+また、この系における渦秩序変数を以下のように定義する。
+\begin{equation}
+    \varphi_2=\frac{(\sum_{x<0} \left|\bm{v}\cdot \bm{t}_{1} \right|+\sum_{x>0} \left|\bm{v}\cdot \bm{t}_{2} \right|)/\sum_i v_i -2/\pi}{1-2/\pi}
+\end{equation}
+ここで、$\bm{t}_1、\bm{t}_2$は、それぞれ左、右の円における壁に並行な単位ベクトル。
+この変数は円が1つの場合の渦秩序変数と同じことを表す。つまり、$\psi>0$の時は角度方向の流れが、$\psi<0$の時は動系方向の流れが生じていることがわかる。
+特に$\psi\simeq1$の時全ての粒子が角度方向に運動していることを、$\psi\simeq0$の時無秩序な流れが生じていることを示す。
+
+
+
 
 \subsection{渦度}\label{subsec:def_vortex}
 渦度場は、速度場$\bm{v}(\bm{r})$を用いて$\omega(\bm{r})=\partial_x v_y -\partial_y v_x$と表される。
@@ -145,7 +263,7 @@ $\epsilon^*=40$に固定し、コントロールパラメータとして系の�
     m_n &=& \int_0^R dr r\left|\frac{1}{2\pi}\int_0^{2\pi}d\theta \bm{v}(r,\theta)\right|^2
 \end{eqnarray}
 ここで、$\bm{v}(r,\theta)$は極座標系の速度場である。
-数値計算する際には、\subsecref{subsec:def_vortex}と同様に式\eqref{eq:valocity_field}に基づいて求めた速度場を使用し、
+数値計算する際には、\subsecref{subsec:def_vortex}と同様に式\equref{eq:valocity_field}に基づいて求めた速度場を使用し、
 積分計算には幅0.25の中点法を用いた。
 ただし、ここで用いる速度場では格子点を$x$軸、$y$軸共に格子の半分$\delta x/2=\delta y/2=0.125$だけ平行移動して計算した。
 

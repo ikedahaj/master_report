@@ -10,8 +10,82 @@
 本節では、ABPを円形領域に閉じ込めた時の結果を示す。
 \subsection{系全体のダイナミクス}
 \subsubsection{低密度系}
-本節では低密度系における系の流れについて論ずる。
+本節では低密度系である$\varphi=0.5$における系の流れについて論ずる。
+\figref{fig:nabp_coor_lodense_mlo_taudep}は粒子のスナップショットである。パラメータは
+$M=0.1$の慣性の影響が小さな系を用い、$Pe$による違いを示した。
 %TODOずをみて論じる：図に使ったパラメータの説明
+\begin{figure}
+    \centering
+    \begin{tabular}{c}
+        \begin{minipage}{0.3\hsize}
+            \text{(a)}
+            \includegraphics[width=\textwidth]{img/nabp/recap_mss_ani/arrR10_lo0.5_tau0.1_ms0.1.pdf}
+        \end{minipage}\begin{minipage}{0.3\hsize}
+            \text{(b)}
+            \includegraphics[width=\textwidth]{img/nabp/recap_mss_ani/arrR10_lo0.5_tau10.0_ms0.1.pdf}
+        \end{minipage}
+        \begin{minipage}{0.3\hsize}
+            \text{(c)}
+            \includegraphics[width=\textwidth]{img/nabp/recap_mss_ani/arrR10_lo0.5_tau100.0_ms0.1.pdf}
+        \end{minipage}
+
+    \end{tabular}
+    \caption[coor_lo]
+    {
+        $\varphi=0.5$における粒子配置。各図において、粒子の色は各粒子の角運動量を表す。
+        パラメータは$M=0.1$の慣性の影響が小さい系を用い、(a) $Pe=0.1$ (b) $Pe=10$ (c) $Pe=100$ である。
+    }
+    \label{fig:nabp_coor_lodense_mlo_taudep}
+\end{figure}
+
+まず$M=0.1$の慣性による影響が小さい領域を見る。\figref{fig:nabp_coor_lodense_mlo_taudep} を見ると、
+$Pe$が小さな領域では粒子は空間に一様に分布しており、$Pe$が大きくなるに従って粒子は壁付近に凝集していることが
+わかる。
+これは ABP において観測されている障害物への集積\cite{yangAggregationSegregationConfined2014}
+と同様の現象である。この現象は MIPS\cite{filyAthermalPhaseSeparation2012}
+と同じ原理で発生していると考えられる。これは壁に向かって進もうとする ABP を考えるとわかる。
+この ABP が1粒子の場合、粒子は壁に衝突したことによってその進行方向を変えないため、
+典型的に時間$\tau$の間壁付近に留まり続け、その後進行方向を変えて壁付近から離れる。
+一方多粒子系においては、壁付近に止まっている間に他の粒子が重なり、壁付近からの脱出を妨害するため、
+結果として粒子は壁付近に層をなして積み重なる。%TODO:つなぎ
+
+この定慣性系におけるオーダーパラメータ$\psi、V$は\figref{fig:nabp_lodense_lom_taudep_timedep}のようになった。
+\begin{figure}
+    \centering
+    \begin{tabular}{c}
+        \begin{minipage}{0.3\hsize}
+            \text{(a)}
+            \includegraphics[width=\textwidth]{img/nabp/recap_mss/orderparameter_0.5_0.1_tau0.1.pdf}
+        \end{minipage}
+        \begin{minipage}{0.3\hsize}
+            \text{(b)}
+            \includegraphics[width=\textwidth]{img/nabp/recap_mss/orderparameter_0.5_0.1_tau10.pdf}
+        \end{minipage}
+        \begin{minipage}{0.3\hsize}
+            \text{(c)}
+            \includegraphics[width=\textwidth]{img/nabp/recap_mss/orderparameter_0.5_0.1_tau100.pdf}
+        \end{minipage}
+    \end{tabular}
+    \caption[timedep_lolom]
+    {
+        オーダーパラメータの時間依存性。オレンジ色の線は$\psi(t)$を、青色の線は$V(t)$を表す。
+        パラメータは$\varphi=0.5、M=0.1$とし、(a) $Pe=0.1$ 、(b) $Pe=10$、(c) $Pe=100$とした。
+    }
+    \label{fig:nabp_lodense_lom_taudep_timedep}
+\end{figure}
+この図から、$Pe$が小さい$Pe=0.1$の系では$\psi、V$が共に0付近であり、これは系全体で無秩序な運動をしていることを表す。
+$Pe$が大きな$Pe=10、Pe=100$の領域においては$V$の絶対値が1に近く系全体で流れが生じているように見える。
+しかし、$\psi$を見ると、その絶対値は1に近く、その符号は正と負の値をとった。
+これは、動き回る粒子が少ないことが原因である。$\psi$の定義\eqnref{eq:def_psi}を見ると、
+この変数は速度の総和に対する、角度方向の速度の絶対値の総和の比を用いて表されるオーダーパラメータである。
+つまり、少数の粒子による運動の効果が、その他の粒子による運動の効果に比べて大きい時、
+この少数の粒子による影響を強く受ける。このことを元に再び\figref{fig:nabp_lodense_lom_taudep_timedep}(b)、(c)
+を見ると、$V$の絶対値は1に近く多くの粒子が同じ方向に揃って運動しているが、
+$\psi$の値が値が正と負に大きく揺らいでおり、動径方向の運動と角度方向の運動を行き来する。
+これと粒子配置を合わせて考えると、壁付近に集まった多くの粒子はほとんど動いておらず、
+系の中心付近に存在する少ない粒子が自由な運動を示していることが分かる。
+
+%TODO:これはMIPSだからダメ
 \begin{figure}
     \centering
     \begin{tabular}{c}
@@ -33,10 +107,11 @@
         $\varphi=0.5$における粒子配置。各図において、粒子の色は各粒子の角運動量を表す。
         パラメータは$Pe=100$を用い、(a) $M=0.1$ (b) $M=10$ (c) $M=100$ である。
     }
-    \label{fig:nabp_coor_lodense}
+    \label{fig:nabp_coor_lodense_tauhigh_mdep}
 \end{figure}
 %fig:m=0.1
-\figref{fig:nabp_coor_lodense}(a) を見ると、$M=0.1$の慣性が小さく$Pe$が大きな領域において粒子が壁に集まることがわかる。
+
+大きな領域において粒子が壁に集まることがわかる。
 これはABPを含むアクティブマター系においてよく見られる障害物への集積\cite{yangAggregationSegregationConfined2014}
 と同様の現象であり、自己駆動誘起相分離 (Motility-Induced Phase Separation、略して MIPS)\cite{filyAthermalPhaseSeparation2012}
 と同じ原理で発生していると考えられる。
