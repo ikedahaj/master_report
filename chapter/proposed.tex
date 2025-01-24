@@ -80,7 +80,7 @@ $r_{wall}$は$r_{wall}=R+0.5\sigma-\left|\bm{r}-\bm{r}_{c_i}\right|$
 
 
 % コントロールパラメータは、
-\secref{sec:result_cabp}では、ABPにキラリティーに関する項を加えた、 Chiral Active Brownian Particles(CABP)%\cite{teeffelenDynamicsBrownianCircle2008}%TODO::aliment forceがないものに変える
+\secref{sec:result_cabp}では、ABPにキラリティーに関する項を加えた、 Chiral Active Brownian Particles(CABP)\cite{maDrivingDynamicColloidal2017}%TODO::aliment forceがないものに変える
 を用いた。このモデルは以下のように表される。
 % CABPの方程式
 \begin{eqnarray}\label{eq:eom_CABP_1}
@@ -90,7 +90,7 @@ $r_{wall}$は$r_{wall}=R+0.5\sigma-\left|\bm{r}-\bm{r}_{c_i}\right|$
     \dot{\theta_i }(t) &=& \Omega+\sqrt{\frac{2}{\tau_p}}\eta_i(t)
 \end{eqnarray}
 ここで、$\Omega$はキラリティーの強度である。このモデルは ABP にキラリティーの効果を加えたモデルである。
-この効果によって粒子の運動方向が曲がり、典型的には円軌道を描く。
+この効果によって粒子の運動方向が曲がり、典型的には\figref{fig:cabp_motion_sample}のように円軌道を描く。
 その円軌道の半径は$R_\Omega=v_0/\Omega$で表される長さである。
 \begin{figure}
     \centering
@@ -104,7 +104,7 @@ $r_{wall}$は$r_{wall}=R+0.5\sigma-\left|\bm{r}-\bm{r}_{c_i}\right|$
     {
         CABP における運動の模式図。
     }
-    \label{fig:sample_four_images}
+    \label{fig:cabp_motion_sample}
 \end{figure}
 
 ポテンシャルにはHarmonicポテンシャルを用いた。
@@ -132,7 +132,10 @@ $\epsilon^*=40$に固定し、コントロールパラメータとして系の�
 \begin{equation}\label{eq:def_psi}
     \psi=\frac{\sum_i \left|\bm{v}_i\cdot \bm{t}_i \right|/\sum_i v_i -2/\pi}{1-2/\pi}
 \end{equation}
-ここで、$\bm{t}_i$は角度方向の単位ベクトルである。$\psi>0$の時は角度方向の流れが、$\psi<0$の時は動系方向の流れが生じていることがわかる。
+ここで、$\bm{t}_i$は角度方向の単位ベクトルである。この変数において変化する部分は
+$\sum_i \left|\bm{v}_i\cdot \bm{t}_i \right|/\sum_i v_i$であり、
+この部分は全粒子の速度のうちに占める角度方向の流れの割合を示す。
+この変数は$\psi>0$の時は角度方向の流れが、$\psi<0$の時は動系方向の流れが生じていることを表す。
 特に$\psi\simeq1$の時全ての粒子が角度方向に運動していることを、$\psi\simeq0$の時無秩序な流れが生じていることを示す。
 
 
@@ -265,6 +268,7 @@ $\epsilon^*=40$に固定し、コントロールパラメータとして系の�
 
 
 \subsection{渦度}\label{subsec:def_vortex}
+円内に発生する渦について議論するため、渦度を定義する。
 渦度場は、速度場$\bm{v}(\bm{r})$を用いて$\omega(\bm{r})=\partial_x v_y -\partial_y v_x$と表される。
 数値計算上、速度場は以下のように計算する。空間を$\delta x=\delta y=0.25 \sigma$の格子状に分割する。
 このとき、格子点$r(i,j)$における速度場は%この書き方でいいのか？
@@ -300,5 +304,7 @@ $\epsilon^*=40$に固定し、コントロールパラメータとして系の�
 \end{equation}
 ここで、$\mathcal{N}_{6j}$は$j$番目の粒子の6つの最近接粒子を、$\theta_{jk}$は
 ベクトル$\bm{r}_j-\bm{r}_k$がx軸となす角度である。
+この変数は粒子が結晶構造をなしているときにその絶対値が1になり、
+ランダムな配置をしているときに絶対値が1になる。
 % TODO:もっと説明
 \end{document}

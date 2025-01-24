@@ -14,14 +14,16 @@
             \text{(a)}
             \includegraphics[width=\textwidth]{img/intro/256px-School_of_sardines_at_the_Monterey_Bay_Aquarium_(12056).jpg}
         \end{minipage}
+        \hspace{5mm}
         \begin{minipage}{0.3\hsize}
             \text{(b)}
             \includegraphics[width=\textwidth]{img/intro/mukudori.png}
         \end{minipage}\\
         \begin{minipage}{0.3\hsize}
             \text{(c)}
-            \includegraphics[width=\textwidth]{img/intro/thumbnail.png}
+            \includegraphics[width=\textwidth]{img/intro/fig_kosoukinn.pdf}
         \end{minipage}
+        \hspace{5mm}
         \begin{minipage}{0.25\hsize}
             \text{(d)}
             \includegraphics[width=\textwidth]{img/intro/ants_volt.pdf}
@@ -29,20 +31,23 @@
     \end{tabular}
     \caption[Four sample images]
     {
-        アクティブマターの例。 (a) イワシのトルネード\cite{school_of_fish} (b) 椋鳥の群れ\cite{mukudori_group} (c)枯草菌\cite{dombrowskiSelfConcentrationLargeScaleCoherence2004}
+        アクティブマターの例。 (a) イワシのトルネード\cite{school_of_fish} (b) 椋鳥の群れ\cite{mukudori_group} (c)枯草菌\cite{chenScaleInvariantCorrelationsDynamic2012}
         (d)蟻の群れ\cite{schneirla1944unique}
     }
     \label{fig:example_actmat}
 \end{figure}
-これらの生物は、単独では一見無秩序な運動を行う。しかし多くの個体が集まって集団になると、\figref{fig:example_actmat}
-のようにイワシのトルネード、
-椋鳥の群れなどのように、群れ全体が秩序だった集団運動を行う。この集団運動は特定の個体がリーダーとなって
-指示を出すことで起こっているのではなく、各個体同士の相互作用の結果として発生している。
-このような自らの力で進むものやその集団のことを総称してアクティブマターと呼ぶ。アクティブマターは
-環境からエネルギーを取り出し、それ自身が前を進みエネルギーを生成する。このような特徴から
+これらの生物は、単独では一見無秩序な運動を行う。多くの生物が集まって集団になって運動する時、多くの場合では
+特定の個体が群れ全体に指示を出して運動することはない。この点においては分子の運動と似た運動をすると言える。
+しかしこれらの集団は分子集団とは全く異なる振る舞いを見せる。例えば\figref{fig:example_actmat}
+のようなイワシのトルネード、椋鳥の群れなどのように、群れ全体が秩序だった集団運動を行う。
+%スケールの話し？
+% このような秩序だった動きは
+これらの集団と分子運動を分ける大きな違いは、分子は周りからの力やエネルギーによって受動的に動く一方で、
+これら生物は自ら環境からエネルギーを取り出し、それ自身が前を進みエネルギーを生成する。
+このような自らの力で進むものやその集団のことを総称してアクティブマターと呼ぶ。生物集団は典型的なアクティブマターの例である。
 アクティブマターは非平衡な物質であるため、非平衡統計力学の観点から近年注目を集めている。%TODO繋ぎ;b
 
-アクティブマターの特徴の１つとして、自発的な渦の発生があげられる。
+アクティブマターにおける特徴的な現象の１つとして、自発的な渦の発生があげられる。
 この現象は個々の構成要素が自己駆動することによって起こる現象であり、
 このような系では、\figref{fig:intro_flow}のように速度相関が発達する。相関長はある特徴的な長さを持っており、
 この長さは渦の大きさに関係していることがわかっている。
@@ -53,51 +58,69 @@
 \begin{figure}%TODO:増やす
     \centering
     \begin{tabular}{c}
-        \begin{minipage}{0.6\hsize}
-            % \text{(a)}
+        \begin{minipage}{0.4\hsize}
+            \text{(a)}
             \includegraphics[width=\textwidth]{img/intro/abd1240-f1.jpeg}
         \end{minipage}
-
+        \hspace{5mm}
+        \begin{minipage}{0.3\hsize}
+            \text{(b)}
+            \includegraphics[width=\textwidth]{img/intro/vol_hyouhisaibou.png}
+        \end{minipage}
     \end{tabular}
     \caption[Four sample images]
     {
-        障害物の影響がない系における大腸菌の渦度\cite{pengImagingEmergenceBacterial2021}
+        障害物の影響がない系における (a) 大腸菌の渦度\cite{pengImagingEmergenceBacterial2021}
+        (b) 表皮細胞の渦度\cite{blanch-mercaderTurbulentDynamicsEpithelial2018}
     }
     \label{fig:intro_flow}
 \end{figure}
 \begin{figure}
     \centering
     \begin{tabular}{c}
-        \begin{minipage}{0.6\hsize}
-            % \text{(a)}
+        \begin{minipage}{0.35\hsize}
+            \text{(a)}
             \includegraphics[width=\textwidth]{img/intro/circle_ecoil.pdf}
+        \end{minipage}
+        \begin{minipage}{0.35\hsize}
+            \text{(b)}
+            \includegraphics[width=\textwidth]{img/intro/confine_dox2013.jpg}
+        \end{minipage}\\
+        \begin{minipage}{0.7\hsize}
+            \text{(c)}
+            \vfill
+            \includegraphics[width=\textwidth]{img/intro/confine_multivol.png}
         \end{minipage}
     \end{tabular}
     \caption[Four sample images]
     {
-        円の中に閉じ込められた大腸菌が形成する渦\cite{beppuGeometrydrivenCollectiveOrdering2017}
+        (a) 円の中に閉じ込められた大腸菌が形成する渦\cite{beppuGeometrydrivenCollectiveOrdering2017}
+        (b) 円の中に閉じ込められた表皮細胞が形成する渦\Cite{dunkelFluidDynamicsBacterial2013}
+        (c) 閉じ込める円の半径を変えることによって円の中に発生する複数の渦\cite{nishiguchiVortexReversalPrecursor2024}
     }
     \label{fig:intro_confine}
 \end{figure}
-
 
 これらアクティブマターについての理論研究はその多くが境界のないバルク系であるが、
 閉じ込め系に対する研究も行われている。閉じ込め系においてはその境界の形状などによって%解説?
 様々な現象が見られている。例えば粒子の凝集\cite{dasAggregateMorphologyActive2020}、整流効果\cite{ghoshSelfPropelledJanusParticles2013}
 捕集効果\cite{kaiserHowCaptureActive2012}、エッジ流\cite{soniOddFreeSurface2019}などが観測されている。
 そのような現象の１つとして、\figref{fig:intro_confine}のようにアクティブマターを円形領域の中に入れると、その
-円の半径によって円の中に1つ、あるいは複数の渦が発生することが知られている。
+円の中に渦が発生することが知られている。
 この渦は、円の半径と系が持つ相関長が等しくなる時、
-\figref{fig:intro_confine}のように１つになることが分かっている。
+\figref{fig:intro_confine}(a)、(b) のように１つになることが分かっている。
+また、最近では円の半径を調節することによって円の中に複数の渦が発生することが分かった\cite{nishiguchiVortexReversalPrecursor2024}。
 この現象は、この障害物とアクティブマターとの相互作用によって相関長
 を取り出すことができると言える。この現象は実験、理論ともに研究が進んでいる。
 特に理論研究においては、円の中に閉じ込めた時に渦一つが現れるだけでなく、
 複数の渦が現れる、群れが振動するなど、様々な現象が見られている。
-しかしこれらの理論研究においては、方程式に整列相互作用や流体力学相互作用を顕に入れる、
-あるいは粒子の形状を変化させてその向きを揃える効果を入れるなど、複雑な条件を持った
-モデルが主に使われている。これらの効果は現実のアクティブマターの動きをよく再現する一方で、
-これらの効果は複雑であり、これらのない、自己駆動力のみによる効果も研究されている。
-%TODO:図の追加：シミュレーションのconfine
+しかしこれらの理論研究においては、生物の集団運動を再現するために、複雑な相互作用が顕に入ったモデルが主に使われている。
+周囲の生物同士がその向きを揃える効果を取り入れるための整列相互作用はその一例である。
+その他にも、バクテリア系における流体の効果を取り入れるための流体力学相互作用や、
+粒子の細長い形状を再現することでその向きを揃えるなどの条件がある。
+これらの効果は現実のアクティブマターの動きをよく再現する一方で、
+これらの効果は系全体のダイナミクスに対して影響を与えるため、自己駆動力のみによる効果については調べることができない。
+%TODO:図の追加：シミュレーションのconfine%流体と壁の例：
 
 そのようなシンプルな状態を研究するためのモデルとして代表的なモデルが Active Brownian Particles (ABP) モデルである。
 ABPモデルは以下のように表される。
@@ -142,12 +165,32 @@ ABP モデルにおける典型的な研究対象の一つは Motility-Induced P
 これは粒子間の引力相互作用がない場合でも起きる現象であり、平衡系の粒子間引力による相分離と対照的である。
 また、この粒子集団において速度相関が発達することが分かっている。
 
-
-近年、この渦度の発達は MIPS が発生しない系においても起こることが分かった。
+\begin{figure}
+    \centering
+    \begin{tabular}{c}
+        \begin{minipage}{0.4\hsize}
+            \text{(a)}
+            \includegraphics[width=\textwidth]{img/intro/abp_orientation.png}
+        \end{minipage}
+        \begin{minipage}{0.4\hsize}
+            \text{(b)}
+            \includegraphics[width=\textwidth]{img/intro/fig_cabp_orientation.png}
+        \end{minipage}
+    \end{tabular}
+    \caption[Four sample images]
+    {
+        理論系において速度ベクトルがx軸となす角。
+        (a) ABP\cite{kurodaAnomalousFluctuationsHomogeneous2023}、
+        (b) CBP\cite{kurodaLongrangeTranslationalOrder2024}
+    }
+    \label{fig:intro_abp_cabp_velfield}
+\end{figure}
+近年、このような速度相関の発達は MIPS が発生しない系においても起こることが分かった。
 これらの研究では、 MIPS の発生を防ぐために高密度領域を探索する\cite{szamelLongrangedVelocityCorrelations2021}、
-ABPモデルに慣性の効果を加えた inertial inertial Active Brownian Particles(iABP) モデルを用いる\cite{kurodaAnomalousFluctuationsHomogeneous2023}、
-粒子の進行方向の回転対称性を破った Chiral Active Brownian Particlesモデル\cite{kurodaLongrangeTranslationalOrder2024}
-において観測されている。
+ABPモデルに慣性の効果を加えた inertial inertial Active Brownian Particles(iABP) モデル\cite{kurodaAnomalousFluctuationsHomogeneous2023}、
+粒子の進行方向の回転対称性を破った Chiral Active Brownian Particlesモデル\cite{kurodaLongrangeTranslationalOrder2024}を用いた系
+において観測されている。\figref{fig:intro_abp_cabp_velfield}はこれらの系における速度の配向のスナップショットで、その速度に相関が見られる。
+これらの系は整列相互作用などの複雑な相互作用がない単純な系であり、自己駆動力によってこれらの相関が発達することが分かる。
 
 ABP 系においては、障害物との相互作用についても研究されている。
 この系においても、実験と同様に粒子の凝集や整流効果などの現象が観測されている。
